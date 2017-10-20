@@ -26,7 +26,7 @@ import DB.Modelo.Photo;
 public class Metadatos {
 
 
-    public ArrayList<Photo> getAllShownImagesPath(Activity activity, String dateClass, String horaInit, String horafin) {
+        public ArrayList<Photo> getAllShownImagesPath(Activity activity,String dateClass, String horaInit, String horafin) {
         //TODO: DATES
         String stringDate = "2017:08:01 00:00:00";
         DateFormat format = new SimpleDateFormat("yyyy:MM:dd hh:mm:ss");
@@ -71,16 +71,16 @@ public class Metadatos {
 
         while (cursor.moveToNext()) {
             String folder = cursor.getString(column_index_folder_name);
-            if(folder.contains("CAMERA") || folder.contains("camera") || folder.contains("100MEDIA") || folder.contains("Camera")) {
+            if(folder.contains("CAMERA") || folder.contains("camera") || folder.contains("100MEDIA")) {
                 absolutePathOfImage = cursor.getString(column_index_data);
                 //Log.d("folder name: ", cursor.getString(column_index_folder_name));
                 String datemeta = getExifDate(absolutePathOfImage);
                 if(datemeta != null) {
                     try {
                         int day = 0;
-                        //TODO: PARSEAr LAS FECHAS
+                        //TODO PARSEAE LAS FECHAS
                         //fecha foto
-                        //Log.d("datemeta: ",datemeta);
+                        Log.d("datemeta: ",datemeta);
                         dateInit = format.parse(datemeta);
                         //day = Integer.parseInt(dayOfWeek);
                         //fecha a comparar - 2017:08:01
@@ -89,7 +89,8 @@ public class Metadatos {
                         //TODO: SACAR DIA DE LA SEMANA DE LA FOTO
                         Calendar cal = Calendar.getInstance();
                         cal.setTime(dateInit);
-                        day = cal.get(Calendar.DAY_OF_WEEK);
+
+                        day = cal.get(Calendar.DAY_OF_WEEK)-1;
                         int hourphoto = cal.get(Calendar.HOUR_OF_DAY);
                         int minutephoto = cal.get(Calendar.MINUTE);
 
@@ -97,15 +98,22 @@ public class Metadatos {
                         Date TimeInit = parser.parse(horaInit);
                         Date TimeEnd = parser.parse(horafin);
                         Date TimePhoto = parser.parse(hourphoto+":"+minutephoto);
-                        //TODO: CHECAR SI ENTRA EN EL RANGO
-                        if(dateInit.after(dateFirst) && (TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd))) {
-                            //Log.d("Dias: ", dayOfTheWeek + " " + dayOfTheWeek2 + " " + day);
-                            if (dayOfTheWeek == day || (dayOfTheWeek2 != 0 && dayOfTheWeek2 == day)) {
-                                listOfAllImages.add(new Photo(absolutePathOfImage,datemeta));
-                                //listOfAllImages.add(absolutePathOfImage);
-                            }
+                        Log.d("Dias: ", dayOfTheWeek + " " + dayOfTheWeek2 + " " + day);
+                        //Log.d("time: ", TimePhoto.toString() + " " + TimeInit.toString() + " " + TimeEnd.toString());
 
+                        if (dayOfTheWeek == day) {
+                            if(TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
+                                //  Log.d("Fecha: ", absolutePathOfImage + " " + day  );
+                                listOfAllImages.add(new Photo(absolutePathOfImage,datemeta));
+                            }
                         }
+                        if (dayOfTheWeek2 != 0 && dayOfTheWeek2 == day){
+                            if(TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
+                                //Log.d("Fecha: ", absolutePathOfImage + " " + day  );
+                                listOfAllImages.add(new Photo(absolutePathOfImage,datemeta));
+                            }
+                        }
+
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -114,15 +122,15 @@ public class Metadatos {
             }
         }
 
-        //TODO: poner las más recientes al principio
-        //ArrayList<String> temp = new ArrayList<>();
         ArrayList<Photo> temp = new ArrayList<>();
 
         for(int i = listOfAllImages.size(); i>0 ;i--) {
+
             temp.add(listOfAllImages.get(i-1));
         }
         return temp;
     }
+
 
     public ArrayList<String> getAllShownImagesPath(Activity activity) {
         //TODO: DATES
