@@ -13,6 +13,11 @@ public class Photo {
     private int id_materia;
     private String path;
     private String fecha;
+    
+    public Photo(String path, String fecha) {
+        this.path = path;
+        this.fecha = fecha;
+    }
 
     public Photo(int id_photos, int id_cursando, int id_usuario, int id_materia, String path, String fecha) {
         this.id_photos = id_photos;
