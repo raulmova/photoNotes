@@ -488,6 +488,7 @@ public class MainActivity extends AppCompatActivity
                 // TODO 15.- Si obtuvimos la imagen y la guardamos la mostramos
             case REQUEST_CAMERA:
                 if (resultCode == RESULT_OK) {
+                    /*
                     photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),photoCRUD.getMaterias().get(0).id_materia,photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
                     Fragment frg = null;
                     frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
@@ -495,14 +496,13 @@ public class MainActivity extends AppCompatActivity
                     ft.detach(frg);
                     ft.attach(frg);
                     ft.commit();
-                    /*
-                    //AlertDialog.Builder mBuilder = new ContextThemeWrapper(this, R.style.Theme_AppCompat);
-                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(getApplicationContext());
+                    */
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                     View mView = getLayoutInflater().inflate(R.layout.materiaspinner, null);
 
                     mBuilder.setTitle("Materia: ");
                     final Spinner mSpinner = (Spinner) mView.findViewById(R.id.spinner);
-                    final ArrayAdapter<Materia> adapter = new ArrayAdapter<Materia>(getApplicationContext(),
+                    final ArrayAdapter<Materia> adapter = new ArrayAdapter<Materia>(MainActivity.this,
                             android.R.layout.simple_spinner_item, photoCRUD.getMaterias());
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     mSpinner.setAdapter(adapter);
@@ -525,9 +525,8 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
                     mBuilder.setView(mView);
-                   // AlertDialog dialog = mBuilder.create();
+                    AlertDialog dialog = mBuilder.create();
                     mBuilder.show();
-                */
                 }
 
 
