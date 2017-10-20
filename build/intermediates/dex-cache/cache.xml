@@ -2,13 +2,166 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.2\8b68a849722b44f584e2d68c451c5e3844c10380\support-annotations-26.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8b68a849722b44f584e2d68c451c5e3844c10380">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.2_775e6e84e8cbd933d1daaeab7ec41ae3b9fc42dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\05dcf95b2261f05bb433354a0e556adf93a29b27\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0d394688dd7030b83dea8eed3fa483410c24afe0">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_2e0617aef7c3e199850454190ddc79edf6c7d0bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\ad6305cf2244c67c440d65680020050588433101\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_dc1d333e53c90594fc20828424488b2f04387535.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\disklrucache\4.2.0\fd3a444cc7987b5fa2a60fabb116395ca2a4da1c\disklrucache-4.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fd3a444cc7987b5fa2a60fabb116395ca2a4da1c">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\disklrucache-4.2.0_bf4fb634fa704768a9faf9a63b3b81dd4157af63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\b766d2bc57b7613811affc9b53e8bf86b8c39dfb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="252896ce41f2a84a2849e29235e66098be7d12ee">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_f98288533e69442524056e3ba23549d0c89d9307.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\b8f3b21439cdd089c0ce61692d6da10fc4e7f26f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_718082c3cefb0509670d7678db999f6dfc5b503a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\f220a607899f534b9be7b26493107832b079cfb2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_901013ccb0b531ab91e0cebfd9e1110312e67ea7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\annotations\4.2.0\1d6fc29f2af61d8fdc31018416040c560423c4b3\annotations-4.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1d6fc29f2af61d8fdc31018416040c560423c4b3">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\annotations-4.2.0_6ff2afc97321ef86992f9af981216f036d373eb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\d24258239474e12f57f81c7ccdb7729e7f6259f3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc9ea2bc291bbebc83f5b160d115c699bddc4e16">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_d6140482965be8c7eb917e35a6217bd16cd1eea1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\gifdecoder\4.2.0\f196283dab426e09559bfe7385f162b2b254cf72\gifdecoder-4.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f196283dab426e09559bfe7385f162b2b254cf72">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\gifdecoder-4.2.0_c73a843fb5de8e72ae624f1beed90322a9162073.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_9f559286f27eadc103756407f827640589910188.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\9381e27b310d638ae1ef6b53c22d35b0f08d2dbf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_76e2788b3ccafbdc5a2a1c34b19d8d46a6cacd14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\1781e58e6c25c783283aae83ec9a7debe5b06f08\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53e8932b1ac8c7dfc35cfeda1f9efbc9822ceaf3">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_e252fb1cc5b55bfbfc4fa44f0431123e2d89c9f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_35effbe25862645c88bd782e52f27162c990ae66.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="46813821abef6590b59173518a05e250346a324b">
+        sha1="0f6d5e519836faac278ccdc51a499191ffe2522a">
         <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4e21277f095d23807c05c6d5e5d506bbd5411e3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\e1ef96e1467679cab4e63a96d3f10513d6d45494\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_bd31f6d86569b4887c6f8df7d2c84943599f7a64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.3.0\73c49077166faa4c3c0059c5f583d1d7bd1475fe\core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\core-3.3.0_9e8ad9ab33f2a62fd3fcc9f70d7124617b0caba3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.2\d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27\picasso-2.3.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\picasso-2.3.2_d27bcfd4d73da08afe8ee31855c11dadbce326a2.jar" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +171,87 @@
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f4b360c3a7c9cc5cb4eaa0bf8d44d8aa1088be0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\bfd61a9bb3956bbd1c7de929de2d3ce5d051341c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9a0c96cb2e74d3a6e692d920c9e03326e77f6429">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_628cbc82b29d3352bd71a44823093d8ca98e5601.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\5127dea39828012eb250b7f2c9853a4824f42544\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_0f93513eab9e669feab46904a871242a3d97c15f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\bcdacc1fbf21dbf4f8d59db8e9900618ba9ee338\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffb68cca34e2762c4f063abc7de5cd5ae648a028">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_84a96c078d39686da0a173b8d28284fbae6a1bdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\7590dbee995884737e57a6c5b50a81fea67b863c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_45b6cba18758bd8b2b5f30d2047e66076b7f15d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\052318e7bb3f256a7fdad77571f22103e96c5465\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_dd7583e3404b0d6703d8cea7a073997b25357c4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\fcb8767108765d715c87d851573b079c8b677718\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_83d93e36802f333caad58b5c329a35b2e2eb7537.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\4.2.0\b76d4269b06b8bda96aac32342a05843b4c0be41\glide-4.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b76d4269b06b8bda96aac32342a05843b4c0be41">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\glide-4.2.0_ae558b376ebfce58dbbf3e5251d8dfeacebf5a54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\3e4b17bd48335f3b1d56240b2e1e3a52be1e6c5c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_f2778b538b9cc12877eaab3c6b8991a6115b5bcf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Raul\.android\build-cache\b272d40d4f086d22622fbca8ead8de89e21f58df\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="C:\CursosAD2017\DesarrolloMovil\PhotoNotes\app\build\intermediates\pre-dexed\debug\classes_f91765d9e0b0ccd98d83acf631c3990b85d01b1e.jar" />
     </item>
 
 </items>

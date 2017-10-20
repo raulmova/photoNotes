@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.raul.photonotes.ListPhotos;
 import com.example.raul.photonotes.Metadatos;
 import com.example.raul.photonotes.R;
 import com.facebook.Profile;
@@ -75,6 +77,9 @@ public class SubjectFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private PhotosCRUD crud;
     Profile profile;
+    int id;
+    int idCursando;
+    Usuario user;
     
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     Metadatos metadatos;
@@ -117,6 +122,7 @@ public class SubjectFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        metadatos = new Metadatos();
         View rootView = inflater.inflate(R.layout.fragment_subject, container, false);
         rootView.setTag(TAG);
         profile = Profile.getCurrentProfile();
@@ -187,6 +193,7 @@ public class SubjectFragment extends Fragment {
                             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                                 txt_to.setText( selectedHour + ":" + selectedMinute);
                                 horafin =  selectedHour + ":" + selectedMinute;
+                                Log.d("Hora Fin: ",horafin);
 
                             }
                         }, hour, minute, DateFormat.is24HourFormat(getActivity()));//Yes 24 hour time
@@ -215,10 +222,21 @@ public class SubjectFragment extends Fragment {
                             /*
                             Si todo Sale bien
                             * */
-                            int id= crud.newMateria(new Materia(0,v_nombre));
-                            Usuario user = crud.selectUsuario(profile.getName());
+                            id= crud.newMateria(new Materia(0,v_nombre));
+                            user = crud.selectUsuario(profile.getName());
                             //Materia materia = crud.selectMateria()
-                            crud.newCursando(new Cursando(0,user.getId_user(),id,v_nombre,"",v_fecha,txt_from.getText().toString(),txt_to.getText().toString()));
+                            //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
+                            idCursando = crud.newCursando(new Cursando(0,user.getId_user(),id,"","",v_nombre,txt_from.getText().toString(),txt_to.getText().toString()));
+
+                            requestPermission();
+
+                           // ArrayList<Photo> pictures = metadatos.getAllShownImagesPath(getActivity(),v_fecha,txt_from.getText().toString(),txt_to.getText().toString());
+                            /*
+                            for(int i = 0; i<pictures.size();i++){
+                                crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,pictures.get(i).getPath(),pictures.get(i).getFecha()));
+                            }
+                            */
+
                             RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
                                 @Override
                                 public void onClick(View view, int position) {
@@ -232,9 +250,7 @@ public class SubjectFragment extends Fragment {
                             Toast.makeText(getActivity(),mSpinner.getSelectedItem().toString()+" "
                                     + v_nombre+" "+v_fecha, Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
-                            
-                            //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
-                            requestPermission();
+
 
                         }
                         else{
@@ -265,6 +281,9 @@ public class SubjectFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
+                Intent inte = new Intent(getActivity(), ListPhotos.class);
+                inte.putExtra("idMateria",id);
+                startActivity(inte);
             }
         });
         rvCourses.setAdapter(adapter);
@@ -329,7 +348,15 @@ public class SubjectFragment extends Fragment {
             }
         } else {
             //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
-            photosPaths= metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+            Log.d("permiso", "no se pide");
+            photosPaths= metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
+
+            for(int i = 0; i<photosPaths.size();i++){
+                Log.d("Path:" , photosPaths.get(i).getPath() +" " + photosPaths.get(i).getFecha());
+                //crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
+            }
+
+
         }
     }
 
@@ -346,7 +373,12 @@ public class SubjectFragment extends Fragment {
 
                     Log.e("value", "Permission Granted, Now you can use local drive .");
                     //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
-                    photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+                    Log.d("permiso", "no se pide");
+                    photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
+                    for(int i = 0; i<photosPaths.size();i++){
+                        Log.d("Path:" , photosPaths.get(i).getPath() +" " + photosPaths.get(i).getFecha());
+                        //crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
+                    }
 
 
                 } else {

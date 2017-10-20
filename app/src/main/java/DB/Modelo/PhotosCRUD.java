@@ -57,11 +57,11 @@ public class PhotosCRUD {
         return (int)newRowId;
     }
 
-    public void newCursando(Cursando cursando) {
+    public int newCursando(Cursando cursando) {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Photo_Contract.Cursando.ID_CURSANDO,cursando.getId_cursando());
+        //values.put(Photo_Contract.Cursando.ID_CURSANDO,cursando.getId_cursando());
         values.put(Photo_Contract.Cursando.ID_USUARIO,cursando.getId_usuario());
         values.put(Photo_Contract.Cursando.ID_MATERIA,cursando.getId_materia());
         values.put(Photo_Contract.Cursando.NOMBRE,cursando.getNombre());
@@ -72,13 +72,14 @@ public class PhotosCRUD {
 
         long newRowId = db.insert(Tablas.CURSANDO,null,values);
         db.close();
+        return (int)newRowId;
     }
 
     public void newPhoto(Photo photo) {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Photo_Contract.Photos.ID_PHOTOS,photo.getId_photos());
+        //values.put(Photo_Contract.Photos.ID_PHOTOS,photo.getId_photos());
         values.put(Photo_Contract.Photos.ID_CURSANDO,photo.getId_cursando());
         values.put(Photo_Contract.Photos.ID_USUARIO,photo.getId_usuario());
         values.put(Photo_Contract.Photos.ID_MATERIA,photo.getId_materia());
@@ -147,6 +148,7 @@ public class PhotosCRUD {
         return materias;
     }
 
+
     public ArrayList<Materia> getMaterias(String dia) {
         ArrayList<Materia> materias = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
@@ -159,8 +161,8 @@ public class PhotosCRUD {
         Cursor cursor = sqLiteDatabase.query(
                 Tablas.MATERIA,
                 columnas,
-                null, //texto para filtrar
-                null, // arreglo de parametros a filtrar
+                Photo_Contract.Cursando.HORARIO + " = ?", //texto para filtrar
+                new String[]{dia}, // arreglo de parametros a filtrar
                 null, // agrupar
                 null, // contiene
                 null); //limite

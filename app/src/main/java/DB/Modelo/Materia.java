@@ -26,4 +26,9 @@ public class Materia {
     public void setId_materia(int id_materia) {
         this.id_materia = id_materia;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

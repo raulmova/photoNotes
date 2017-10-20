@@ -15,8 +15,8 @@
 
     <string-array name="horario">
         <item>Choose a day</item>
-        <item>Lunes y jueves</item>
-        <item>Martes y viernes</item>
+        <item>Lunes y Jueves</item>
+        <item>Martes y Viernes</item>
         <item>Jueves</item>
         <item>Miercoles</item>
     </string-array>

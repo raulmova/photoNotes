@@ -1,6 +1,8 @@
 package com.example.raul.photonotes;
 
 import android.Manifest;
+import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -19,7 +21,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 import android.text.Html;
+import android.text.format.DateFormat;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -31,8 +36,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -59,8 +69,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
+import Adapters.RecycleViewCustomAdapterCourses;
 import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
 import DB.Modelo.Photo;
@@ -462,38 +474,63 @@ public class MainActivity extends AppCompatActivity
         switch(requestCode) {
             //TODO: 8.- Si obtuvimos una imagen entonces la procesamos
             case SELECT_PHOTO:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Uri imagenSeleccionada = imageReturnedIntent.getData();
-                    try{
+                    try {
                         InputStream imagenStream = getContentResolver().openInputStream(imagenSeleccionada);
                         Bitmap imagen = BitmapFactory.decodeStream(imagenStream);
-                       // photoCRUD.newPhoto(new Photo("",imagenSeleccionada.toString(),"Test"));
-                       // Fragment frg = null;
-                       // frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
-                       // final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        // ft.detach(frg);
-                        //ft.attach(frg);
-                        //ft.commit();
-                        //ivPhoto.setImageBitmap(imagen);
-                        //tvUrl.setText(imagenSeleccionada.toString());
 
-                    }catch (FileNotFoundException fnte){
+                    } catch (FileNotFoundException fnte) {
                         Toast.makeText(this, fnte.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                     return;
                 }
                 // TODO 15.- Si obtuvimos la imagen y la guardamos la mostramos
             case REQUEST_CAMERA:
-                if(resultCode == RESULT_OK){
-                    //Picasso.with(this).load(tvUrl.getText().toString()).into(ivPhoto);
-                    photoCRUD.newPhoto(new Photo(0,1,1,1,photoUrl,"10/10/2017"));
+                if (resultCode == RESULT_OK) {
+                    photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),photoCRUD.getMaterias().get(0).id_materia,photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
                     Fragment frg = null;
                     frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
                     final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                     ft.detach(frg);
                     ft.attach(frg);
                     ft.commit();
+                    /*
+                    //AlertDialog.Builder mBuilder = new ContextThemeWrapper(this, R.style.Theme_AppCompat);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(getApplicationContext());
+                    View mView = getLayoutInflater().inflate(R.layout.materiaspinner, null);
+
+                    mBuilder.setTitle("Materia: ");
+                    final Spinner mSpinner = (Spinner) mView.findViewById(R.id.spinner);
+                    final ArrayAdapter<Materia> adapter = new ArrayAdapter<Materia>(getApplicationContext(),
+                            android.R.layout.simple_spinner_item, photoCRUD.getMaterias());
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    mSpinner.setAdapter(adapter);
+                    mBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),photoCRUD.getMaterias().get(0).id_materia,photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
+                            Fragment frg = null;
+                            frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
+                            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                            ft.detach(frg);
+                            ft.attach(frg);
+                            ft.commit();
+                        }
+                    });
+                    mBuilder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dialog.dismiss();
+                        }
+                    });
+                    mBuilder.setView(mView);
+                   // AlertDialog dialog = mBuilder.create();
+                    mBuilder.show();
+                */
                 }
+
+
                 return;
         }
     }

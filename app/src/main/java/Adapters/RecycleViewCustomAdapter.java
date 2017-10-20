@@ -47,7 +47,9 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
     @Override
     public void onBindViewHolder(final PerfilViewHolder holder, final int position) {
 
-        holder.tvMater.setText(photos.get(position).getId_photos());
+
+        holder.tvMater.setText(photos.get(position).getFecha());;
+        //holder.tvMater.setText(photos.get(position).getId_photos());
         //GlideApp.with().load(url).centerCrop().into(holder.ivPhoto);
         Glide.with(this.mContext).load(photos.get(position).getPath()).into(holder.ivPhoto);
 
