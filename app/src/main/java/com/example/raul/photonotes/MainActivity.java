@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         photoCRUD = new PhotosCRUD(getApplicationContext());
+        Log.d("PROFILE: ", Profile.getCurrentProfile().getName());
+
         p2 = Profile.getCurrentProfile();
 
         if(!photoCRUD.usuarioExists(p2.getName())){

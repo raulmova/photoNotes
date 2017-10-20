@@ -1,14 +1,18 @@
 package Fragments;
 
+import android.Manifest;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +30,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.raul.photonotes.Metadatos;
 import com.example.raul.photonotes.R;
 import com.facebook.Profile;
 
@@ -37,6 +42,7 @@ import Adapters.RecycleViewCustomAdapter;
 import Adapters.RecycleViewCustomAdapterCourses;
 import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
+import DB.Modelo.Photo;
 import DB.Modelo.PhotosCRUD;
 import DB.Modelo.Usuario;
 

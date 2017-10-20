@@ -21,6 +21,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
@@ -28,60 +29,63 @@ import com.facebook.login.widget.LoginButton;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
-public class Login extends FragmentActivity{
+public class Login extends FragmentActivity {
 
     private String info = "";
     private LoginButton loginButton;
     private ImageView ivLogin;
-    private CallbackManager callbackManager;
+    private CallbackManager mCallbackManager;
     private AccessTokenTracker tracker;
     private static String id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-        callbackManager = CallbackManager.Factory.create();
         setContentView(R.layout.activity_login);
-        loginButton = (LoginButton)findViewById(R.id.login_button);
-        ivLogin = (ImageView)findViewById(R.id.ivLogin);
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        ivLogin = (ImageView) findViewById(R.id.ivLogin);
 
         Glide.with(getApplicationContext()).load(R.drawable.notes).into(ivLogin);
 
+        loginButton.setReadPermissions("public_profile");
+        mCallbackManager = CallbackManager.Factory.create();
+        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
 
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            private ProfileTracker mProfileTracker;
+
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //AccessToken accessToken = loginResult.getAccessToken();
-                Log.d("on Success","True");
-                info = ("User ID: " +
-                        loginResult.getAccessToken().getUserId() + "\n" + "Auth Token: " + loginResult.getAccessToken().getToken());
-                ///id=loginResult.getAccessToken().getUserId().toString();
-                /*Intent intent = new Intent(Login.this,MainActivity.class);
-                intent.putExtra("UserID",id);
-                startActivity(intent);*/
+                if (Profile.getCurrentProfile() == null) {
+                    mProfileTracker = new ProfileTracker() {
+                        @Override
+                        protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                            Log.v("facebook - profile", currentProfile.getFirstName());
+                            mProfileTracker.stopTracking();
+                        }
+                    };
+                    // no need to call startTracking() on mProfileTracker
+                    // because it is called by its constructor, internally.
+                } else {
+                    Profile profile = Profile.getCurrentProfile();
+                    Log.v("facebook - profile", profile.getFirstName());
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    // intent.putExtra("UserID",id);
+                    startActivity(intent);
+                }
             }
 
             @Override
             public void onCancel() {
-                info = ("Login attempt canceled.");
-                Log.d("on CANCEL","True");
+                Log.v("facebook - onCancel", "cancelled");
             }
 
             @Override
             public void onError(FacebookException e) {
-                info = ("Login attempt failed.");
-                Log.d("on ERROR","True");
+                Log.v("facebook - onError", e.getMessage());
             }
         });
-        System.out.println(info);
-        tracker = new AccessTokenTracker() {
-            @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-
-            }
-        };
-        tracker.startTracking();
     }
 
     public boolean isLoggedIn() {
@@ -92,32 +96,25 @@ public class Login extends FragmentActivity{
     @Override
     protected void onResume() {
         super.onResume();
-        if (isLoggedIn()){
-            Intent intent = new Intent(Login.this,MainActivity.class);
-            intent.putExtra("UserID",id);
+        if (isLoggedIn()) {
+            Intent intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
-
         }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        tracker.stopTracking();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            Log.d("on Success","ACTIVITY RESULT");
-            Intent intent = new Intent(Login.this,MainActivity.class);
-            intent.putExtra("UserID",id);
+            Log.d("on Success", "ACTIVITY RESULT");
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            // intent.putExtra("UserID",id);
             startActivity(intent);
         } else {
-            Toast.makeText(getApplicationContext(), "Unable to login please check your internet connection",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Unable to login please check your internet connection", Toast.LENGTH_LONG).show();
         }
+
     }
 }
 
