@@ -27,6 +27,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.raul.photonotes.R;
+import com.facebook.Profile;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,8 +35,10 @@ import java.util.Calendar;
 
 import Adapters.RecycleViewCustomAdapter;
 import Adapters.RecycleViewCustomAdapterCourses;
+import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
 import DB.Modelo.PhotosCRUD;
+import DB.Modelo.Usuario;
 
 
 /**
@@ -65,7 +68,7 @@ public class SubjectFragment extends Fragment {
     private EditText ed_nombre;
     private OnFragmentInteractionListener mListener;
     private PhotosCRUD crud;
-
+    Profile profile;
     public SubjectFragment() {
         // Required empty public constructor
     }
@@ -102,6 +105,7 @@ public class SubjectFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_subject, container, false);
         rootView.setTag(TAG);
+        profile = Profile.getCurrentProfile();
         crud = new PhotosCRUD(getActivity());
 
         rvCourses = (RecyclerView) rootView.findViewById(R.id.rvCourses);
@@ -195,7 +199,9 @@ public class SubjectFragment extends Fragment {
                             Si todo Sale bien
                             * */
                             int id= crud.newMateria(new Materia(0,v_nombre));
-
+                            Usuario user = crud.selectUsuario(profile.getName());
+                            //Materia materia = crud.selectMateria()
+                            crud.newCursando(new Cursando(0,user.getId_user(),id,v_nombre,"",v_fecha,txt_from.getText().toString(),txt_to.getText().toString()));
                             RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
                                 @Override
                                 public void onClick(View view, int position) {

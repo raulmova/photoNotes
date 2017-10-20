@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"
+        <activity
+            android:name=".Login"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +46,6 @@
             </intent-filter>
         </activity>
 
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.raul.photonotes.fileprovider"
@@ -59,7 +59,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CoursesDay"></activity>
     </application>
 
 </manifest>

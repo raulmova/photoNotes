@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.raul.photonotes.CoursesDay;
 import com.example.raul.photonotes.R;
 
 import java.text.SimpleDateFormat;
@@ -102,9 +103,9 @@ public class CalendarFragment extends Fragment {
                         .setAction("Action", null).show();
                 //tvDate.setText("The day is: " + dayOfWeek);
 
-              //  Intent intent = new Intent(getActivity().getApplication(),courses_day.class);
-               // intent.putExtra("dia",dayOfWeek);
-               // startActivity(intent);
+                Intent intent = new Intent(getActivity().getApplication(),CoursesDay.class);
+                intent.putExtra("dia",dayOfWeek);
+                startActivity(intent);
 
             }
         });

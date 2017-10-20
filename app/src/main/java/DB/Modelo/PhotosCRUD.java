@@ -147,6 +147,33 @@ public class PhotosCRUD {
         return materias;
     }
 
+    public ArrayList<Materia> getMaterias(String dia) {
+        ArrayList<Materia> materias = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+
+        String []columnas = {
+                Photo_Contract.Materia.ID_MATERIA,
+                Photo_Contract.Materia.NOMBRE
+        };
+
+        Cursor cursor = sqLiteDatabase.query(
+                Tablas.MATERIA,
+                columnas,
+                null, //texto para filtrar
+                null, // arreglo de parametros a filtrar
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        while (cursor.moveToNext()) {
+            materias.add(new Materia(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Materia.ID_MATERIA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Materia.NOMBRE))
+            ));
+        }
+        return materias;
+    }
+
     public ArrayList<Cursando> getCursandos() {
         ArrayList<Cursando> cursandos = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
@@ -421,6 +448,77 @@ public class PhotosCRUD {
         return usuario;
     }
 
+    public Usuario selectUsuario(String name) {
+
+        String nombre = "";
+        String contra = "";
+        String correo = "";
+        Usuario usuario = new Usuario(0,nombre,contra,correo);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String []columnas = {
+                Photo_Contract.Usuario.ID_USUARIO,
+                Photo_Contract.Usuario.NOMBRE,
+                Photo_Contract.Usuario.CONTRA,
+                Photo_Contract.Usuario.CORREO
+        };
+        //TODO 15: Se crea un cursor para hacer recorrido de resultados y se crea una estructura de query
+        Cursor cursor = db.query(
+                Tablas.USUARIO,
+                columnas,
+                Photo_Contract.Usuario.NOMBRE + " = ?", //texto para filtrar
+                new String[]{name}, // arreglo de parametros a filtrar
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        //TODO 16: Se recorren los resultados y se añaden a la lista
+        while (cursor.moveToNext()) {
+            usuario = new Usuario(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Usuario.ID_USUARIO)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Usuario.NOMBRE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Usuario.CONTRA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Usuario.CORREO))
+            );
+        }
+
+        cursor.close();
+        db.close();
+        return usuario;
+    }
+
+    public boolean usuarioExists(String name) {
+
+        String nombre = "";
+        String contra = "";
+        String correo = "";
+        Usuario usuario = new Usuario(0,nombre,contra,correo);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String []columnas = {
+                Photo_Contract.Usuario.ID_USUARIO,
+                Photo_Contract.Usuario.NOMBRE,
+                Photo_Contract.Usuario.CONTRA,
+                Photo_Contract.Usuario.CORREO
+        };
+        //TODO 15: Se crea un cursor para hacer recorrido de resultados y se crea una estructura de query
+        Cursor cursor = db.query(
+                Tablas.USUARIO,
+                columnas,
+                Photo_Contract.Usuario.NOMBRE + " = ?", //texto para filtrar
+                new String[]{name}, // arreglo de parametros a filtrar
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        if(cursor.getCount() <= 0){
+            cursor.close();
+            db.close();
+            return false;
+        }
+            cursor.close();
+            db.close();
+            return true;
+    }
+
     public Materia selectMateria(int id) {
 
         String nombre="";
@@ -438,6 +536,40 @@ public class PhotosCRUD {
                 columnas,
                 Photo_Contract.Materia.ID_MATERIA + " = ?", //texto para filtrar
                 new String[]{String.valueOf(id)}, // arreglo de parametros a filtrar
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        //TODO 16: Se recorren los resultados y se añaden a la lista
+        while (cursor.moveToNext()) {
+            materia = new Materia(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Materia.ID_MATERIA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Materia.NOMBRE))
+            );
+        }
+
+        cursor.close();
+        db.close();
+        return materia;
+    }
+
+    public Materia selectMateria(String name) {
+
+        String nombre="";
+        String descripcion="";
+        Materia materia = new Materia(0,nombre);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String []columnas = {
+                Photo_Contract.Materia.ID_MATERIA,
+                Photo_Contract.Materia.NOMBRE,
+        };
+
+        //TODO 15: Se crea un cursor para hacer recorrido de resultados y se crea una estructura de query
+        Cursor cursor = db.query(
+                Tablas.MATERIA,
+                columnas,
+                Photo_Contract.Materia.NOMBRE + " = ?", //texto para filtrar
+                new String[]{name}, // arreglo de parametros a filtrar
                 null, // agrupar
                 null, // contiene
                 null); //limite

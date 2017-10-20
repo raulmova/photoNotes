@@ -49,8 +49,6 @@ import com.facebook.login.widget.ProfilePictureView;
 import com.squareup.picasso.Picasso;
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton;
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper;
-import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RFACLabelItem;
-import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RapidFloatingActionContentLabelList;
 
 import org.json.JSONObject;
 
@@ -123,6 +121,16 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         photoCRUD = new PhotosCRUD(getApplicationContext());
+        p2 = Profile.getCurrentProfile();
+
+        if(!photoCRUD.usuarioExists(p2.getName())){
+            photoCRUD.newUsuario(new Usuario(0,p2.getName(),p2.getFirstName(),p2.getLastName()));
+            Log.d("USER:","nuevo");
+        }
+        else{
+            Log.d("USER:","existe");
+        }
+
 
         //photoCRUD.newMateria(new Materia(1,"Programación Avanzada"));
         //photoCRUD.newUsuario(new Usuario(1, "Raul2", "Admin", "raul@raul.com"));
@@ -208,7 +216,6 @@ public class MainActivity extends AppCompatActivity
         p = new Profile(token.getUserId(),null,null,null,null,null);
         profile = p.getProfilePictureUri(202,202);
         Picasso.with(this).load(profile.toString()).into(ivProfile);
-        p2 = Profile.getCurrentProfile();
 
         tvName.setText(p2.getFirstName());
         String middleName;
