@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,8 +25,12 @@ public class ListPhotos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_photos);
-        int materia = getIntent().getIntExtra("idMateria",0);
+        //int materia = getIntent().getIntExtra("idMateria",0);
+        int mater = getIntent().getIntExtra("idMateria",1);
+        //String mat = getIntent().getStringExtra("idMateria");
+        //int mate = Integer.parseInt(mat);
         rvListPhotos = (RecyclerView) findViewById(R.id.rvListPhotos);
+        Log.d("IDMat fotos por mat:",""+mater);
 
         rvListPhotos.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
@@ -34,13 +39,15 @@ public class ListPhotos extends AppCompatActivity {
         photos = new ArrayList<Photo>();
 
         crud = new PhotosCRUD(getApplicationContext());
-        photos = crud.getPhotos();
-        //photos = crud.getPhotos();
+       // photos = crud.getPhotos();
+        photos = crud.getPhotos(mater);
+        //crud.getMaterias(materia);
+
 
         RecycleViewCustomAdapter adapter = new RecycleViewCustomAdapter(getApplicationContext(),photos, new Adapters.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(getApplicationContext(),"Position: " +position, Toast.LENGTH_SHORT);
+
             }
         });
 

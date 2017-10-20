@@ -149,7 +149,7 @@ public class PhotosCRUD {
     }
 
 
-    public ArrayList<Materia> getMaterias(String dia) {
+    public ArrayList<Materia> getMaterias(int id) {
         ArrayList<Materia> materias = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
 
@@ -161,8 +161,8 @@ public class PhotosCRUD {
         Cursor cursor = sqLiteDatabase.query(
                 Tablas.MATERIA,
                 columnas,
-                Photo_Contract.Cursando.HORARIO + " = ?", //texto para filtrar
-                new String[]{dia}, // arreglo de parametros a filtrar
+                Photo_Contract.Materia.ID_MATERIA + " = ?", //texto para filtrar
+                new String[]{String.valueOf(id)}, // arreglo de parametros a filtrar
                 null, // agrupar
                 null, // contiene
                 null); //limite
@@ -234,6 +234,42 @@ public class PhotosCRUD {
                 columnas,
                 null, //texto para filtrar
                 null, // arreglo de parametros a filtrar
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        while (cursor.moveToNext()) {
+            photos.add(new Photo(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.ID_PHOTOS)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.ID_CURSANDO)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.ID_USUARIO)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.ID_MATERIA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.PATH)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Photos.FECHA))
+            ));
+        }
+        return photos;
+    }
+
+    public ArrayList<Photo> getPhotos(int id) {
+        ArrayList<Photo> photos = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+
+        String []columnas = {
+                Photo_Contract.Photos.ID_PHOTOS,
+                Photo_Contract.Photos.ID_CURSANDO,
+                Photo_Contract.Photos.ID_USUARIO,
+                Photo_Contract.Photos.ID_MATERIA,
+                Photo_Contract.Photos.PATH,
+                Photo_Contract.Photos.FECHA,
+
+        };
+
+        Cursor cursor = sqLiteDatabase.query(
+                Tablas.PHOTO,
+                columnas,
+                Photo_Contract.Photos.ID_MATERIA + " = ?", //texto para filtrar
+                new String[]{String.valueOf(id)}, // arreglo de parametros a filtrar
                 null, // agrupar
                 null, // contiene
                 null); //limite

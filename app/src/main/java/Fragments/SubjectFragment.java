@@ -228,19 +228,15 @@ public class SubjectFragment extends Fragment {
                             //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
                             idCursando = crud.newCursando(new Cursando(0,user.getId_user(),id,"","",v_nombre,txt_from.getText().toString(),txt_to.getText().toString()));
 
-                            requestPermission();
-
-                           // ArrayList<Photo> pictures = metadatos.getAllShownImagesPath(getActivity(),v_fecha,txt_from.getText().toString(),txt_to.getText().toString());
-                            /*
-                            for(int i = 0; i<pictures.size();i++){
-                                crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,pictures.get(i).getPath(),pictures.get(i).getFecha()));
-                            }
-                            */
-
                             RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
                                 @Override
                                 public void onClick(View view, int position) {
                                     Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
+                                    Intent inte = new Intent(getActivity(), ListPhotos.class);
+                                    Materia ma = crud.selectMateria(id);
+                                    inte.putExtra("idMateria",ma.getId_materia());
+                                    startActivity(inte);
+
                                 }
                             });
                             rvCourses.setAdapter(adapter);
@@ -282,7 +278,9 @@ public class SubjectFragment extends Fragment {
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
                 Intent inte = new Intent(getActivity(), ListPhotos.class);
-                inte.putExtra("idMateria",id);
+                Materia ma = crud.selectMateria(id);
+                Materia aux = crud.getMaterias().get(position);
+                inte.putExtra("idMateria",aux.getId_materia());
                 startActivity(inte);
             }
         });
@@ -349,12 +347,14 @@ public class SubjectFragment extends Fragment {
         } else {
             //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
             Log.d("permiso", "no se pide");
+            /*
             photosPaths= metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
 
             for(int i = 0; i<photosPaths.size();i++){
                 Log.d("Path:" , photosPaths.get(i).getPath() +" " + photosPaths.get(i).getFecha());
                 //crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
             }
+            */
 
 
         }
@@ -374,11 +374,12 @@ public class SubjectFragment extends Fragment {
                     Log.e("value", "Permission Granted, Now you can use local drive .");
                     //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
                     Log.d("permiso", "no se pide");
-                    photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
+                    /*photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
                     for(int i = 0; i<photosPaths.size();i++){
                         Log.d("Path:" , photosPaths.get(i).getPath() +" " + photosPaths.get(i).getFecha());
                         //crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
                     }
+                    */
 
 
                 } else {

@@ -509,7 +509,8 @@ public class MainActivity extends AppCompatActivity
                     mBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),photoCRUD.getMaterias().get(0).id_materia,photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
+                            Materia aux = (Materia)mSpinner.getSelectedItem();
+                            photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),aux.getId_materia(),photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
                             Fragment frg = null;
                             frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
                             final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

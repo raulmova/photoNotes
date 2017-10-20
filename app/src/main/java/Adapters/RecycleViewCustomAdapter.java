@@ -19,7 +19,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import DB.Modelo.Materia;
 import DB.Modelo.Photo;
+import DB.Modelo.PhotosCRUD;
 
 /**
  * Created by Raul on 11/10/2017.
@@ -31,11 +33,13 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
     private Context mContext;
     private ArrayList<Photo> photos;
     private Adapters.RecyclerViewClickListener listener;
+    private PhotosCRUD crud;
 
     public RecycleViewCustomAdapter(Context c, ArrayList<Photo> photos, Adapters.RecyclerViewClickListener listener){
         mContext = c;
         this.listener = listener;
         this.photos = photos;
+        crud = new PhotosCRUD(c);
     }
 
     @Override
@@ -48,7 +52,11 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
     public void onBindViewHolder(final PerfilViewHolder holder, final int position) {
 
 
-        holder.tvMater.setText(photos.get(position).getFecha());;
+        ArrayList<Materia> materia;
+        materia = crud.getMaterias(photos.get(position).getId_materia());
+        Materia aux = materia.get(0);
+
+        holder.tvMater.setText(photos.get(position).getId_materia() + " " +aux.getNombre());
         //holder.tvMater.setText(photos.get(position).getId_photos());
         //GlideApp.with().load(url).centerCrop().into(holder.ivPhoto);
         Glide.with(this.mContext).load(photos.get(position).getPath()).into(holder.ivPhoto);
