@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -122,10 +123,7 @@ public class SubjectFragment extends Fragment {
                 //final TextView prueba =(TextView)mView.findViewById(R.id.prueba);
 
                 ed_nombre= (EditText)mView.findViewById(R.id.edit_nombre);
-
-
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                         android.R.layout.simple_spinner_item,
                         getResources().getStringArray(R.array.horario));
 
@@ -198,6 +196,15 @@ public class SubjectFragment extends Fragment {
                             * */
                             int id= crud.newMateria(new Materia(0,v_nombre));
 
+                            RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
+                                @Override
+                                public void onClick(View view, int position) {
+                                    Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
+                                }
+                            });
+                            rvCourses.setAdapter(adapter);
+                            adapter.notifyDataSetChanged();
+
                             Log.d("ID:",id+"");
                             Toast.makeText(getActivity(),mSpinner.getSelectedItem().toString()+" "
                                     + v_nombre+" "+v_fecha, Toast.LENGTH_SHORT).show();
@@ -234,7 +241,6 @@ public class SubjectFragment extends Fragment {
                 Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
             }
         });
-
         rvCourses.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         return rootView;

@@ -30,7 +30,7 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
     private ArrayList<Materia> materias;
     private RecyclerViewClickListener listener;
 
-    public RecycleViewCustomAdapterCourses(Context c, ArrayList<Materia> materias, RecyclerViewClickListener listener){
+    public RecycleViewCustomAdapterCourses(Context c, ArrayList<Materia> materias, Adapters.RecyclerViewClickListener listener){
         mContext = c;
         this.listener = listener;
         this.materias = materias;
@@ -45,9 +45,10 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
     @Override
     public void onBindViewHolder(PerfilViewHolder holder, int position) {
         //
-        holder.tvNameCourses.setText(materias.get(position).getNombre());
-        holder.tvDays.setText(materias.get(position).getId_materia());
+        //holder.tvNameCourses.setText(materias.get(position).getNombre());
+        //holder.tvDays.setText(materias.get(position).getId_materia());
        // holder.tvHours.setText(photos.get(position).getId());
+        holder.tvNameCourses.setText(materias.get(position).getNombre());
 
 
     }
@@ -67,7 +68,6 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
             tvNameCourses = (TextView) vistaElemento.findViewById(R.id.tvNameCourses);
             tvDays = (TextView) vistaElemento.findViewById(R.id.tvDays);
             tvHours = (TextView) vistaElemento.findViewById(R.id.tvHours);
-
         }
     }
 }
