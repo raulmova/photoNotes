@@ -69,6 +69,14 @@ public class SubjectFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private PhotosCRUD crud;
     Profile profile;
+    
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    Metadatos metadatos;
+    String v_nombre,v_fecha;
+    String horainit,horafin;
+    ArrayList<Photo> photosPaths = new ArrayList<>();
+
+    
     public SubjectFragment() {
         // Required empty public constructor
     }
@@ -152,6 +160,7 @@ public class SubjectFragment extends Fragment {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                                 txt_from.setText( selectedHour + ":" + selectedMinute);
+                                horainit =  selectedHour + ":" + selectedMinute;
                             }
                         }, hour, minute, DateFormat.is24HourFormat(getActivity()));//Yes 24 hour time
 
@@ -171,6 +180,8 @@ public class SubjectFragment extends Fragment {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                                 txt_to.setText( selectedHour + ":" + selectedMinute);
+                                horafin =  selectedHour + ":" + selectedMinute;
+
                             }
                         }, hour, minute, DateFormat.is24HourFormat(getActivity()));//Yes 24 hour time
 
@@ -183,8 +194,8 @@ public class SubjectFragment extends Fragment {
                 mBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String v_nombre="";
-                        String v_fecha="";
+                        v_nombre="";
+                        v_fecha="";
                         if(!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Choose a day")){
                             v_nombre=ed_nombre.getText().toString();
 
@@ -215,6 +226,9 @@ public class SubjectFragment extends Fragment {
                             Toast.makeText(getActivity(),mSpinner.getSelectedItem().toString()+" "
                                     + v_nombre+" "+v_fecha, Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
+                            
+                            //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
+                            requestPermission();
 
                         }
                         else{
@@ -291,5 +305,52 @@ public class SubjectFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+     private void requestPermission() {
+
+        if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //debemos mostrar un mensaje
+            if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                //mostramos una explicacind eque no acepto dar permiso para acceder a la libreria
+
+            } else  {
+                //pedimos permiso
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_EXTERNAL_STORAGE);
+
+            }
+        } else {
+            //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
+            photosPaths= metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                    Log.e("value", "Permission Granted, Now you can use local drive .");
+                    //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
+                    photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+        }
+    }
 
 }
