@@ -97,9 +97,10 @@ public class HomeFragment extends Fragment {
         rvList = (RecyclerView) rootView.findViewById(R.id.rvList);
 
        // rvList.setHasFixedSize(true);
-       //GridAutofitLayoutManager mLayoutManager = new GridAutofitLayoutManager(getActivity(), 540);
+       GridAutofitLayoutManager mLayoutManager = new GridAutofitLayoutManager(getActivity(), 540);
         //mLayoutManager = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, true);
-        mLayoutManager = new GridLayoutManager(getActivity(), 2);
+      // mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+        //mLayoutManager = new GridLayoutManager(getActivity(), 2);
         //mLayoutManager = new LinearLayoutManager(getActivity());
        // mLayoutManager.canScrollHorizontally();
        // mLayoutManager.canScrollVertically();

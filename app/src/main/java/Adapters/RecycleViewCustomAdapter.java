@@ -70,7 +70,6 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
                 shareIntent.putExtra(Intent.EXTRA_STREAM, photoUri);
                 mContext.startActivity(Intent.createChooser(shareIntent, "Share using: "));
                 /**/
-
                 return true;
             }
         });
@@ -143,5 +142,6 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
             tvDate = (TextView) vistaElemento.findViewById(R.id.product_price);
         }
     }
+
 
 }
