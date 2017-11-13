@@ -80,11 +80,13 @@ import DB.Modelo.PhotosCRUD;
 import DB.Modelo.Usuario;
 import Fragments.CalendarFragment;
 import Fragments.HomeFragment;
+import Fragments.ProfileFragment;
 import Fragments.SubjectFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,
-        SubjectFragment.OnFragmentInteractionListener, CalendarFragment.OnFragmentInteractionListener{
+        SubjectFragment.OnFragmentInteractionListener, CalendarFragment.OnFragmentInteractionListener,
+        ProfileFragment.OnFragmentInteractionListener{
 
     private static final int SELECT_PHOTO = 100;
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG_HOME = "home";
     private static final String TAG_SUBJECTS = "subjects";
     private static final String TAG_CALENDAR = "calendar";
+    private static final String TAG_PROFILE = "profile";
     public static String CURRENT_TAG = TAG_HOME;
 
     // toolbar titles respected to selected nav menu item
@@ -295,6 +298,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_calendar) {
             navItemIndex = 2;
             CURRENT_TAG = TAG_CALENDAR;
+        }else if (id == R.id.nav_profile) {
+            navItemIndex = 3;
+            CURRENT_TAG = TAG_PROFILE;
         }  else if (id == R.id.nav_logout) {
             LoginManager.getInstance().logOut();
             startActivity(new Intent(MainActivity.this, Login.class));
@@ -366,6 +372,10 @@ public class MainActivity extends AppCompatActivity
                 // subjects
                 CalendarFragment calendarFragment = new CalendarFragment();
                 return calendarFragment;
+            case 3:
+                // subjects
+                ProfileFragment profileFragment = new ProfileFragment();
+                return profileFragment;
             default:
                 return new HomeFragment();
         }

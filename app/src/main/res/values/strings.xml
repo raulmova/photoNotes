@@ -13,6 +13,7 @@
     <string name="nav_home">Courses</string>
     <string name="nav_photos">Calendar</string>
 
+
     <string-array name="horario">
         <item>Choose a day</item>
         <item>Lunes y Jueves</item>
@@ -26,6 +27,7 @@
         <item>Home</item>
         <item>Courses</item>
         <item>Calendar</item>
+        <item>Profile</item>
     </string-array>
 
     <string name="activity_title_about_us">About Us</string>
@@ -37,6 +39,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_fullscreen_photo">FullscreenPhotoActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>

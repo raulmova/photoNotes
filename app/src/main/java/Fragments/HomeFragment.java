@@ -1,17 +1,25 @@
 package Fragments;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.Toast;
 
+import com.example.raul.photonotes.FullscreenPhotoActivity;
+import com.example.raul.photonotes.GridAutofitLayoutManager;
 import com.example.raul.photonotes.R;
 
 import java.util.ArrayList;
@@ -78,6 +86,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,8 +95,14 @@ public class HomeFragment extends Fragment {
         rootView.setTag(TAG);
 
         rvList = (RecyclerView) rootView.findViewById(R.id.rvList);
-        rvList.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(getActivity(),2);
+
+       // rvList.setHasFixedSize(true);
+       //GridAutofitLayoutManager mLayoutManager = new GridAutofitLayoutManager(getActivity(), 540);
+        //mLayoutManager = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, true);
+        mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        //mLayoutManager = new LinearLayoutManager(getActivity());
+       // mLayoutManager.canScrollHorizontally();
+       // mLayoutManager.canScrollVertically();
         rvList.setLayoutManager(mLayoutManager);
 
         photos = new ArrayList<Photo>();
@@ -97,10 +112,19 @@ public class HomeFragment extends Fragment {
         //photos = crud.getPhotos();
 
         RecycleViewCustomAdapter adapter = new RecycleViewCustomAdapter(this.getContext(),photos, new Adapters.RecyclerViewClickListener() {
+            
+
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(getContext(),"Position: " +position, Toast.LENGTH_SHORT);
+                Log.d("Position: ", ""+position);
+
+               // Toast.makeText(getContext(), position, Toast.LENGTH_LONG).show();
+                Intent inten = new Intent(getActivity(), FullscreenPhotoActivity.class);
+                inten.putExtra("url",photos.get(position).getPath());
+               startActivity(inten);
             }
+
+
         });
 
         rvList.setAdapter(adapter);
@@ -148,5 +172,6 @@ public class HomeFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 
 }
