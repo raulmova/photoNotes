@@ -211,7 +211,7 @@ public class SubjectFragment extends Fragment {
                         v_fecha="";
                         if(!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Choose a day")){
                             v_nombre=ed_nombre.getText().toString();
-
+                            v_fecha = mSpinner.getSelectedItem().toString();
 
                             if(v_nombre.isEmpty())
                             {
@@ -226,8 +226,8 @@ public class SubjectFragment extends Fragment {
                             user = crud.selectUsuario(profile.getName());
                             //Materia materia = crud.selectMateria()
                             //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
-                            idCursando = crud.newCursando(new Cursando(0,user.getId_user(),id,"","",v_nombre,txt_from.getText().toString(),txt_to.getText().toString()));
-
+                            idCursando = crud.newCursando(new Cursando(0,user.getId_user(),id,"","",v_fecha,txt_from.getText().toString(),txt_to.getText().toString()));
+                            Log.d("DEBUG", v_fecha);
                             RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
                                 @Override
                                 public void onClick(View view, int position) {

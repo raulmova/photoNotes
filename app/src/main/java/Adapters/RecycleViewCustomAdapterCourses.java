@@ -16,7 +16,9 @@ import com.example.raul.photonotes.R;
 
 import java.util.ArrayList;
 
+import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
+import DB.Modelo.PhotosCRUD;
 
 
 /**
@@ -29,11 +31,13 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
     private Context mContext;
     private ArrayList<Materia> materias;
     private RecyclerViewClickListener listener;
+    private PhotosCRUD crud;
 
     public RecycleViewCustomAdapterCourses(Context c, ArrayList<Materia> materias, Adapters.RecyclerViewClickListener listener){
         mContext = c;
         this.listener = listener;
         this.materias = materias;
+        crud = new PhotosCRUD(c);
     }
 
     @Override
@@ -49,7 +53,10 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
         //holder.tvDays.setText(materias.get(position).getId_materia());
        // holder.tvHours.setText(photos.get(position).getId());
         holder.tvNameCourses.setText(materias.get(position).getNombre());
-        holder.tvDays.setText("ID: "+materias.get(position).getId_materia());
+        //.tvDays.setText("ID: "+materias.get(position).getId_materia());
+        int id = materias.get(position).getId_materia();
+        ArrayList<Cursando> curs = crud.getCursandos(id);
+        holder.tvDays.setText(curs.get(0).getHorario());
     }
 
 

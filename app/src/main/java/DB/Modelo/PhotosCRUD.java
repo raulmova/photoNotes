@@ -215,6 +215,45 @@ public class PhotosCRUD {
         return cursandos;
     }
 
+    public ArrayList<Cursando> getCursandos(int id) {
+        ArrayList<Cursando> cursandos = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+
+        String []columnas = {
+                Photo_Contract.Cursando.ID_CURSANDO,
+                Photo_Contract.Cursando.ID_USUARIO,
+                Photo_Contract.Cursando.ID_MATERIA,
+                Photo_Contract.Cursando.NOMBRE,
+                Photo_Contract.Cursando.DESCRIPCION,
+                Photo_Contract.Cursando.HORARIO,
+                Photo_Contract.Cursando.HORA_ENTRADA,
+                Photo_Contract.Cursando.HORARIO_SALIDA
+        };
+
+        Cursor cursor = sqLiteDatabase.query(
+                Tablas.CURSANDO,
+                columnas,
+                Photo_Contract.Cursando.ID_MATERIA + " = ?", //texto para filtrar
+                new String[]{String.valueOf(id)},
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        while (cursor.moveToNext()) {
+            cursandos.add(new Cursando(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.ID_CURSANDO)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.ID_USUARIO)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.ID_MATERIA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.NOMBRE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.DESCRIPCION)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.HORARIO)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.HORA_ENTRADA)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.HORARIO_SALIDA))
+            ));
+        }
+        return cursandos;
+    }
+
     public ArrayList<Photo> getPhotos() {
         ArrayList<Photo> photos = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
