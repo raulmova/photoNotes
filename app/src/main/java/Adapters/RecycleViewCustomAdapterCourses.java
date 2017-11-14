@@ -56,7 +56,7 @@ public class RecycleViewCustomAdapterCourses extends RecyclerView.Adapter<Recycl
         //.tvDays.setText("ID: "+materias.get(position).getId_materia());
         int id = materias.get(position).getId_materia();
         ArrayList<Cursando> curs = crud.getCursandos(id);
-        holder.tvDays.setText(curs.get(0).getHorario());
+        holder.tvDays.setText(curs.get(0).getHorario() + ". "+curs.get(0).getHora_entrada() + " - " + curs.get(0).getHora_salida());
     }
 
 

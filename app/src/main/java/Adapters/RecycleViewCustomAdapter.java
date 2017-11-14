@@ -98,6 +98,8 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
                                 //handle menu1 click
                                 // Toast.makeText(getContext(), position, Toast.LENGTH_LONG).show();
                                 Intent inten = new Intent(view.getContext(), EditActivity.class);
+                                inten.putExtra("materia", ""+photos.get(position).getId_materia());
+                                Log.d("ID:",""+photos.get(position).getId_materia());
                                 inten.putExtra("url",photos.get(position).getPath());
                                 view.getContext().startActivity(inten);
                                 break;
@@ -142,6 +144,5 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<RecycleViewCu
             tvDate = (TextView) vistaElemento.findViewById(R.id.product_price);
         }
     }
-
 
 }

@@ -1,6 +1,7 @@
 package com.example.raul.photonotes;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //deleteDatabase("photo_school.db");
         photoCRUD = new PhotosCRUD(getApplicationContext());
         Log.d("PROFILE: ", Profile.getCurrentProfile().getName());
 
@@ -480,7 +482,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-
         switch(requestCode) {
             //TODO: 8.- Si obtuvimos una imagen entonces la procesamos
             case SELECT_PHOTO:
@@ -498,15 +499,6 @@ public class MainActivity extends AppCompatActivity
                 // TODO 15.- Si obtuvimos la imagen y la guardamos la mostramos
             case REQUEST_CAMERA:
                 if (resultCode == RESULT_OK) {
-                    /*
-                    photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),photoCRUD.getMaterias().get(0).id_materia,photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
-                    Fragment frg = null;
-                    frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
-                    final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.detach(frg);
-                    ft.attach(frg);
-                    ft.commit();
-                    */
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                     View mView = getLayoutInflater().inflate(R.layout.materiaspinner, null);
 
@@ -601,4 +593,5 @@ public class MainActivity extends AppCompatActivity
        // tvUrl.setText(urlName);
         return image;
     }
+
 }

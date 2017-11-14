@@ -1,5 +1,6 @@
 package Fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -7,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -174,5 +176,36 @@ public class HomeFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
 
+        GridAutofitLayoutManager mLayoutManager = new GridAutofitLayoutManager(getActivity(), 540);
+        rvList.setLayoutManager(mLayoutManager);
+
+        photos = new ArrayList<Photo>();
+
+        crud = new PhotosCRUD(getActivity());
+        photos = crud.getPhotos();
+
+        RecycleViewCustomAdapter adapter = new RecycleViewCustomAdapter(this.getContext(),photos, new Adapters.RecyclerViewClickListener() {
+
+
+            @Override
+            public void onClick(View view, int position) {
+                Log.d("Position: ", ""+position);
+
+                // Toast.makeText(getContext(), position, Toast.LENGTH_LONG).show();
+                Intent inten = new Intent(getActivity(), FullscreenPhotoActivity.class);
+                inten.putExtra("url",photos.get(position).getPath());
+                startActivity(inten);
+            }
+
+
+        });
+
+        rvList.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+    }
 }

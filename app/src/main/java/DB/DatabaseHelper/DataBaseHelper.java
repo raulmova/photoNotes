@@ -16,7 +16,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     private static final String NOMBRE_BASE_DATOS = "photo_school.db";
 
-    private static final int VERSION_ACTUAL = 1;
+    private static final int VERSION_ACTUAL = 2;
     private final Context contexto;
 
 
