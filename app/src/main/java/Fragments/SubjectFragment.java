@@ -83,8 +83,8 @@ public class SubjectFragment extends Fragment {
     
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     Metadatos metadatos;
-    String v_nombre,v_fecha;
-    String horainit,horafin;
+    String v_nombre, v_fecha;
+    String horainit, horafin;
     ArrayList<Photo> photosPaths = new ArrayList<>();
 
     
@@ -141,7 +141,8 @@ public class SubjectFragment extends Fragment {
                         .setAction("Action", null).show();
 
                 AlertDialog.Builder mBuilder = new  AlertDialog.Builder(getActivity());
-                View mView = getLayoutInflater(getArguments()).inflate(R.layout.dialog_spinner,null);
+                //noinspection RestrictedApi
+                @SuppressLint("RestrictedApi") View mView = getLayoutInflater(getArguments()).inflate(R.layout.dialog_spinner,null);
                 mBuilder.setTitle("Añadir Materia");
                 final Spinner mSpinner =(Spinner)mView.findViewById(R.id.spinner);
                 //final TextView prueba =(TextView)mView.findViewById(R.id.prueba);
@@ -208,7 +209,6 @@ public class SubjectFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         v_nombre="";
-                        v_fecha="";
                         if(!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Choose a day")){
                             v_nombre=ed_nombre.getText().toString();
                             v_fecha = mSpinner.getSelectedItem().toString();
@@ -227,7 +227,14 @@ public class SubjectFragment extends Fragment {
                             //Materia materia = crud.selectMateria()
                             //TODO PEDIR PERMISO DE STORAGE...DESPUES MANDA LLAMAR A METADATOS
                             idCursando = crud.newCursando(new Cursando(0,user.getId_user(),id,"","",v_fecha,txt_from.getText().toString(),txt_to.getText().toString()));
-                            Log.d("DEBUG", v_fecha);
+                            Log.d("datos: ", v_fecha + " " + horainit + " " + horafin);
+                            //TODO MIL: mandar a llamar las fotos de la galeria
+                            requestPermission();
+
+                            for(int i = 0; i < photosPaths.size(); i++) {
+                                crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
+                            }
+
                             RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getActivity(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
                                 @Override
                                 public void onClick(View view, int position) {
@@ -244,7 +251,7 @@ public class SubjectFragment extends Fragment {
 
                             Log.d("ID:",id+"");
                             Toast.makeText(getActivity(),mSpinner.getSelectedItem().toString()+" "
-                                    + v_nombre+" "+v_fecha, Toast.LENGTH_SHORT).show();
+                                    + v_nombre, Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
 
 
@@ -330,7 +337,7 @@ public class SubjectFragment extends Fragment {
 
      private void requestPermission() {
 
-        if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)
+        if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             //debemos mostrar un mensaje
             if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
@@ -346,7 +353,9 @@ public class SubjectFragment extends Fragment {
             }
         } else {
             //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
-            Log.d("permiso", "no se pide");
+            //Log.d("permiso", "no se pide");
+            photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+            Log.d("size photos", ""+photosPaths.size());
             /*
             photosPaths= metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
 
@@ -373,9 +382,11 @@ public class SubjectFragment extends Fragment {
 
                     Log.e("value", "Permission Granted, Now you can use local drive .");
                     //TODO: AQUI LLAMA A LOS METADATOS Y REGRESA OBJETO FOTO CON PATHS Y FECHAS PARA LA MATERIA CREADA
-                    Log.d("permiso", "no se pide");
-                    /*photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_nombre,horainit,horafin);
-                    for(int i = 0; i<photosPaths.size();i++){
+                    //Log.d("permiso", "no se pide");
+                    photosPaths=metadatos.getAllShownImagesPath(getActivity(),v_fecha,horainit,horafin);
+                    Log.d("size photos", ""+photosPaths.size());
+
+                    /*for(int i = 0; i<photosPaths.size();i++){
                         Log.d("Path:" , photosPaths.get(i).getPath() +" " + photosPaths.get(i).getFecha());
                         //crud.newPhoto(new Photo(0,idCursando,user.getId_user(),id,photosPaths.get(i).getPath(),photosPaths.get(i).getFecha()));
                     }
@@ -393,3 +404,4 @@ public class SubjectFragment extends Fragment {
     }
 
 }
+
