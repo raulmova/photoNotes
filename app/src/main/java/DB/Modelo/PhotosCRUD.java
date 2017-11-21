@@ -253,6 +253,53 @@ public class PhotosCRUD {
         }
         return cursandos;
     }
+    
+     public ArrayList<Materia> getMateriasDia(int n_dia) {
+        String day="";
+        ArrayList<Materia> materias = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+
+        switch (n_dia) {
+            case 1:
+                day = "Lunes";
+                break;
+            case 2:
+                day = "Martes";
+                break;
+            case 3:
+                day = "Miercoles";
+                break;
+            case 4:
+                day = "Jueves";
+                break;
+            case 5:
+                day = "Viernes";
+                break;
+            case 6: day = "Sabado";
+                break;
+            default:
+                day = "NO";
+                break;
+        }
+        String []columnas = {
+                Photo_Contract.Cursando.ID_MATERIA,
+        };
+
+        Cursor cursor = sqLiteDatabase.query(
+                Tablas.CURSANDO,
+                columnas,
+                Photo_Contract.Cursando.HORARIO + " LIKE ?", //texto para filtrar
+                new String[]{"%"+ String.valueOf(day) + "%"},
+                null, // agrupar
+                null, // contiene
+                null); //limite
+
+        while (cursor.moveToNext()) {
+            materias.add(getMaterias(cursor.getInt(cursor.getColumnIndexOrThrow(Photo_Contract.Cursando.ID_MATERIA))).get(0));
+        }
+
+        return materias;
+    }
 
     public ArrayList<Photo> getPhotos() {
         ArrayList<Photo> photos = new ArrayList<>();
