@@ -96,15 +96,19 @@ public class CalendarFragment extends Fragment {
                 //String date = year+"/"+month+"/"+dayOf;
                 //Log.d("date","OnSelectedDayChange: date: " + date);
                 //tvDate.setText("Date is: " + dayOf + " / " + (month+1) + " / " + year);
-                SimpleDateFormat simpledateformat = new SimpleDateFormat("EEEE");
+
+                SimpleDateFormat simpledateformat = new SimpleDateFormat("u");
+                SimpleDateFormat simpledateformat2 = new SimpleDateFormat("EEEE");
                 Date date = new Date(year, month, dayOf - 1);
-                String dayOfWeek = simpledateformat.format(date);
+                String dayOfWeek = simpledateformat2.format(date);
+                int numberDayOfWeek = Integer.parseInt(simpledateformat.format(date));
                 Snackbar.make(rootView, "Day: "+dayOfWeek, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 //tvDate.setText("The day is: " + dayOfWeek);
 
                 Intent intent = new Intent(getActivity().getApplication(),CoursesDay.class);
                 intent.putExtra("dia",dayOfWeek);
+                intent.putExtra("numerodia", numberDayOfWeek);
                 startActivity(intent);
 
             }
