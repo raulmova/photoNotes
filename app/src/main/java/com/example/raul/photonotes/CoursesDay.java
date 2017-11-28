@@ -41,6 +41,7 @@ public class CoursesDay extends AppCompatActivity {
         rvCoursesDay.setLayoutManager(mLayoutManager);
         rvCoursesDay.setHasFixedSize(true);
 
+
         RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getApplicationContext(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {

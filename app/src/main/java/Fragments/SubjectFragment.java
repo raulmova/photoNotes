@@ -1,6 +1,7 @@
 package Fragments;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -42,6 +43,7 @@ import java.util.Calendar;
 
 import Adapters.RecycleViewCustomAdapter;
 import Adapters.RecycleViewCustomAdapterCourses;
+import Azure.CRUDAzure;
 import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
 import DB.Modelo.Photo;
@@ -75,6 +77,7 @@ public class SubjectFragment extends Fragment {
 
     private EditText ed_nombre;
     private OnFragmentInteractionListener mListener;
+    private CRUDAzure crudazure;
     private PhotosCRUD crud;
     Profile profile;
     int id;
@@ -117,6 +120,8 @@ public class SubjectFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        crudazure = new CRUDAzure(getActivity());
+        crudazure.initAzureClient();
     }
 
     @Override
@@ -126,12 +131,20 @@ public class SubjectFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_subject, container, false);
         rootView.setTag(TAG);
         profile = Profile.getCurrentProfile();
+
+
         crud = new PhotosCRUD(getActivity());
+
+
+        crudazure.obtenerMateria();
+
 
         rvCourses = (RecyclerView) rootView.findViewById(R.id.rvCourses);
         rvCourses.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         rvCourses.setLayoutManager(mLayoutManager);
+
+
 
         fabAddCourse= (FloatingActionButton) rootView.findViewById(R.id.fabAddCourse);
         fabAddCourse.setOnClickListener(new View.OnClickListener() {
@@ -141,7 +154,7 @@ public class SubjectFragment extends Fragment {
                         .setAction("Action", null).show();
 
                 AlertDialog.Builder mBuilder = new  AlertDialog.Builder(getActivity());
-                View mView = getLayoutInflater(getArguments()).inflate(R.layout.dialog_spinner,null);
+                @SuppressLint("RestrictedApi") View mView = getLayoutInflater(getArguments()).inflate(R.layout.dialog_spinner,null);
                 mBuilder.setTitle("Añadir Materia");
                 final Spinner mSpinner =(Spinner)mView.findViewById(R.id.spinner);
                 //final TextView prueba =(TextView)mView.findViewById(R.id.prueba);
@@ -222,6 +235,9 @@ public class SubjectFragment extends Fragment {
                             /*
                             Si todo Sale bien
                             * */
+
+
+                            crudazure.newMateria(new Materia(v_nombre));
                             id= crud.newMateria(new Materia(0,v_nombre));
                             user = crud.selectUsuario(profile.getName());
                             //Materia materia = crud.selectMateria()

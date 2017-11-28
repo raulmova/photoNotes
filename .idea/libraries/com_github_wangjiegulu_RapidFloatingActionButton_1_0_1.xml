@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.github.wangjiegulu:RapidFloatingActionButton-1.0.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RapidFloatingActionButton-1.0.1.aar/31eb8fa7584a3000e25dba631a4fe6bc/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RapidFloatingActionButton-1.0.1.aar/31eb8fa7584a3000e25dba631a4fe6bc/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RapidFloatingActionButton-1.0.1.aar/78cd0a0b728577ed3834a360b6b28b1d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RapidFloatingActionButton-1.0.1.aar/78cd0a0b728577ed3834a360b6b28b1d/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

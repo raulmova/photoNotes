@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         //deleteDatabase("photo_school.db");
         photoCRUD = new PhotosCRUD(getApplicationContext());
-        Log.d("PROFILE: ", Profile.getCurrentProfile().getName());
+       // Log.d("PROFILE: ", Profile.getCurrentProfile().getName());
 
         p2 = Profile.getCurrentProfile();
 
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity
         tvDetail = (TextView)hView.findViewById(R.id.tvDetail);
         p = new Profile(token.getUserId(),null,null,null,null,null);
         profile = p.getProfilePictureUri(202,202);
-        Picasso.with(this).load(profile.toString()).into(ivProfile);
+        //Picasso.with(this).load(profile.toString()).into(ivProfile);
 
         tvName.setText(p2.getFirstName());
         String middleName;
@@ -513,6 +513,7 @@ public class MainActivity extends AppCompatActivity
                         public void onClick(DialogInterface dialog, int which) {
                             Materia aux = (Materia)mSpinner.getSelectedItem();
                             photoCRUD.newPhoto(new Photo(0,photoCRUD.getCursandos().get(0).getId_cursando(),photoCRUD.getUsuarios().get(0).getId_user(),aux.getId_materia(),photoUrl,photoCRUD.getCursandos().get(0).getHorario()));
+
                             Fragment frg = null;
                             frg = getSupportFragmentManager().findFragmentByTag(TAG_HOME);
                             final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

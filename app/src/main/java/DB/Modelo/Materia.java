@@ -5,6 +5,7 @@ package DB.Modelo;
  */
 public class Materia {
     public int id_materia;
+    public String id;
     private String nombre;
 
 
@@ -13,6 +14,9 @@ public class Materia {
         this.id_materia = id_materia;
         this.nombre = nombre;
 
+    }
+    public Materia(String nombre){
+        this.nombre=nombre;
     }
 
     public int getId_materia() {
