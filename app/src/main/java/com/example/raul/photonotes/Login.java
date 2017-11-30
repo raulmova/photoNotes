@@ -106,7 +106,7 @@ public class Login extends FragmentActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK && isLoggedIn()) {
             Log.d("on Success", "ACTIVITY RESULT");
             Intent intent = new Intent(Login.this, MainActivity.class);
             // intent.putExtra("UserID",id);
