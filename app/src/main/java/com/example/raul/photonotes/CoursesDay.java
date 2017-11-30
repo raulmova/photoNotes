@@ -48,9 +48,9 @@ public class CoursesDay extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getApplicationContext(),"Position: " +position, Toast.LENGTH_SHORT);
-                //Intent inte = new Intent(getApplicationContext(), ListPhotos.class);
-                //inte.putExtra("idMateria",id);
-                //startActivity(inte);
+                Intent inte = new Intent(getApplicationContext(), ListPhotos.class);
+                inte.putExtra("idMateria",materiasDia.get(position).getId_materia());
+                startActivity(inte);
             }
         });
         rvCoursesDay.setAdapter(adapter);
