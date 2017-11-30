@@ -1,5 +1,6 @@
 package com.example.raul.photonotes;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -47,7 +48,12 @@ public class ListPhotos extends AppCompatActivity {
         RecycleViewCustomAdapter adapter = new RecycleViewCustomAdapter(getApplicationContext(),photos, new Adapters.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
+                Log.d("Position: ", ""+position);
 
+                // Toast.makeText(getContext(), position, Toast.LENGTH_LONG).show();
+                Intent inten = new Intent(ListPhotos.this, FullscreenPhotoActivity.class);
+                inten.putExtra("url",photos.get(position).getPath());
+                startActivity(inten);
             }
         });
 
