@@ -71,7 +71,7 @@ public class Metadatos {
 
         while (cursor.moveToNext()) {
             String folder = cursor.getString(column_index_folder_name);
-            if(folder.contains("CAMERA") || folder.contains("camera") || folder.contains("100MEDIA")) {
+            if(folder.contains("CAMERA") || folder.contains("amera") || folder.contains("100MEDIA")) {
                 absolutePathOfImage = cursor.getString(column_index_data);
                 //Log.d("folder name: ", cursor.getString(column_index_folder_name));
                 String datemeta = getExifDate(absolutePathOfImage);
