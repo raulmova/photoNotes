@@ -26,11 +26,11 @@ import DB.Modelo.Photo;
 public class Metadatos {
 
 
-        public ArrayList<Photo> getAllShownImagesPath(Activity activity,String dateClass, String horaInit, String horafin) {
+                public ArrayList<Photo> getAllShownImagesPath(Activity activity,String dateClass, String horaInit, String horafin) {
         //TODO: DATES
         String stringDate = "2017:08:01 00:00:00";
         DateFormat format = new SimpleDateFormat("yyyy:MM:dd hh:mm:ss");
-        Date dateInit, dateFirst;
+        Date dateInitMeta, dateAugust;
         int dayOfTheWeek=0,dayOfTheWeek2=0;
         Uri uri;
         Cursor cursor;
@@ -71,7 +71,7 @@ public class Metadatos {
 
         while (cursor.moveToNext()) {
             String folder = cursor.getString(column_index_folder_name);
-            if(folder.contains("CAMERA") || folder.contains("camera") || folder.contains("100MEDIA")) {
+            if(folder.contains("CAMERA") || folder.contains("amera") || folder.contains("100MEDIA")) {
                 absolutePathOfImage = cursor.getString(column_index_data);
                 //Log.d("folder name: ", cursor.getString(column_index_folder_name));
                 String datemeta = getExifDate(absolutePathOfImage);
@@ -80,40 +80,42 @@ public class Metadatos {
                         int day = 0;
                         //TODO PARSEAE LAS FECHAS
                         //fecha foto
-                        Log.d("datemeta: ",datemeta);
-                        dateInit = format.parse(datemeta);
+                        //Log.d("datemeta: ",datemeta);
+                        dateInitMeta = format.parse(datemeta);
                         //day = Integer.parseInt(dayOfWeek);
                         //fecha a comparar - 2017:08:01
-                        dateFirst = format.parse(stringDate);
+                        dateAugust = format.parse(stringDate);
 
-                        //TODO: SACAR DIA DE LA SEMANA DE LA FOTO
-                        Calendar cal = Calendar.getInstance();
-                        cal.setTime(dateInit);
+                        if(dateInitMeta.after(dateAugust)) {
+                            //TODO: SACAR DIA DE LA SEMANA DE LA FOTO
+                            Calendar cal = Calendar.getInstance();
+                            cal.setTime(dateInitMeta);
 
-                        day = cal.get(Calendar.DAY_OF_WEEK)-1;
-                        int hourphoto = cal.get(Calendar.HOUR_OF_DAY);
-                        int minutephoto = cal.get(Calendar.MINUTE);
+                            day = cal.get(Calendar.DAY_OF_WEEK) - 1;
+                            int hourphoto = cal.get(Calendar.HOUR_OF_DAY);
+                            int minutephoto = cal.get(Calendar.MINUTE);
 
-                        //TODO: PARSEAR LAS HORAS
-                        Date TimeInit = parser.parse(horaInit);
-                        Date TimeEnd = parser.parse(horafin);
-                        Date TimePhoto = parser.parse(hourphoto+":"+minutephoto);
-                        Log.d("Dias: ", dayOfTheWeek + " " + dayOfTheWeek2 + " " + day);
-                        //Log.d("time: ", TimePhoto.toString() + " " + TimeInit.toString() + " " + TimeEnd.toString());
+                            //TODO: PARSEAR LAS HORAS
+                            Date TimeInit = parser.parse(horaInit);
+                            Date TimeEnd = parser.parse(horafin);
+                            Date TimePhoto = parser.parse(hourphoto + ":" + minutephoto);
+                            //Log.d("Dias: ", dayOfTheWeek + " " + dayOfTheWeek2 + " " + day);
+                            //Log.d("time: ", TimePhoto.toString() + " " + TimeInit.toString() + " " + TimeEnd.toString());
 
-                        if (dayOfTheWeek == day) {
-                            if(TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
-                                //  Log.d("Fecha: ", absolutePathOfImage + " " + day  );
-                                listOfAllImages.add(new Photo(absolutePathOfImage,datemeta));
+                            if (dayOfTheWeek == day) {
+                                if (TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
+                                    //  Log.d("Fecha: ", absolutePathOfImage + " " + day  );
+                                    listOfAllImages.add(new Photo(absolutePathOfImage, datemeta));
+                                }
                             }
-                        }
-                        if (dayOfTheWeek2 != 0 && dayOfTheWeek2 == day){
-                            if(TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
-                                //Log.d("Fecha: ", absolutePathOfImage + " " + day  );
-                                listOfAllImages.add(new Photo(absolutePathOfImage,datemeta));
+                            if (dayOfTheWeek2 != 0 && dayOfTheWeek2 == day) {
+                                if (TimePhoto.after(TimeInit) && TimePhoto.before(TimeEnd)) {
+                                    //Log.d("Fecha: ", absolutePathOfImage + " " + day  );
+                                    listOfAllImages.add(new Photo(absolutePathOfImage, datemeta));
+                                }
                             }
-                        }
 
+                        }
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -130,8 +132,7 @@ public class Metadatos {
         }
         return temp;
     }
-
-
+        
     public ArrayList<String> getAllShownImagesPath(Activity activity) {
         //TODO: DATES
         String stringDate = "2017:08:01 00:00:00";

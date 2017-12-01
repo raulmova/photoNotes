@@ -25,6 +25,7 @@ public class CoursesDay extends AppCompatActivity {
     private ArrayList<String> Nombre;
     private ArrayList<String> Fecha;
     private ArrayList<String> Horario;
+    private  ArrayList<Materia> materiasDia =  new ArrayList<>();
     private PhotosCRUD crud;
     LinearLayoutManager mLayoutManager;
 
@@ -35,20 +36,22 @@ public class CoursesDay extends AppCompatActivity {
         rvCoursesDay = (RecyclerView) findViewById(R.id.lv_languages1);
         Intent intent = getIntent();
         final String v_dia = intent.getStringExtra("dia");
+        int n_dia = intent.getIntExtra("numerodia",0);
         getSupportActionBar().setTitle("Cursos: "+v_dia);
         crud = new PhotosCRUD(getApplicationContext());
+        materiasDia = crud.getMateriasDia(n_dia);
         mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rvCoursesDay.setLayoutManager(mLayoutManager);
         rvCoursesDay.setHasFixedSize(true);
 
 
-        RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getApplicationContext(),crud.getMaterias(), new Adapters.RecyclerViewClickListener() {
+        RecycleViewCustomAdapterCourses adapter = new RecycleViewCustomAdapterCourses(getApplicationContext(),materiasDia, new Adapters.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getApplicationContext(),"Position: " +position, Toast.LENGTH_SHORT);
-                //Intent inte = new Intent(getApplicationContext(), ListPhotos.class);
-                //inte.putExtra("idMateria",id);
-                //startActivity(inte);
+                Intent inte = new Intent(getApplicationContext(), ListPhotos.class);
+                inte.putExtra("idMateria",materiasDia.get(position).getId_materia());
+                startActivity(inte);
             }
         });
         rvCoursesDay.setAdapter(adapter);
