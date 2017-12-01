@@ -53,6 +53,8 @@ public class CRUDAzure {
 
             try {
                 mClient= new MobileServiceClient("https://photonotesbeta.azurewebsites.net",activity);
+                tablaMateria = mClient.getTable(Materia.class);
+
             }
             catch (MalformedURLException e){
                 Log.d("InitClientAzure", e.getMessage());
