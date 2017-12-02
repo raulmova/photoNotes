@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity
         tvDetail = (TextView)hView.findViewById(R.id.tvDetail);
         p = new Profile(token.getUserId(),null,null,null,null,null);
         profile = p.getProfilePictureUri(202,202);
-        //Picasso.with(this).load(profile.toString()).into(ivProfile);
+        Picasso.with(this).load(profile.toString()).into(ivProfile);
 
         tvName.setText(p2.getFirstName());
         String middleName;
