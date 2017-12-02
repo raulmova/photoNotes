@@ -74,6 +74,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import Adapters.RecycleViewCustomAdapterCourses;
+import Conecction.Connection;
 import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
 import DB.Modelo.Photo;
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity
     FloatingActionButton fab;
     public static int navItemIndex = 0;
     PhotosCRUD photoCRUD;
+    //Connection conn;
 
     private static final String TAG_HOME = "home";
     private static final String TAG_SUBJECTS = "subjects";
@@ -139,6 +141,20 @@ public class MainActivity extends AppCompatActivity
         //deleteDatabase("photo_school.db");
         photoCRUD = new PhotosCRUD(getApplicationContext());
        // Log.d("PROFILE: ", Profile.getCurrentProfile().getName());
+        /*
+        Creamos la conexion a Internet
+        * */
+        Connection conn = new Connection();
+
+
+        if (conn.isNetworkConnected(getApplicationContext()))
+        {
+            Toast.makeText(MainActivity.this, "Si hay Conexion A Internet ", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "No hay Conexion a Internet", Toast.LENGTH_SHORT).show();
+        }
+
 
         p2 = Profile.getCurrentProfile();
 

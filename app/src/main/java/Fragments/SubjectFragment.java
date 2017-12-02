@@ -33,6 +33,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.raul.photonotes.ListPhotos;
+import com.example.raul.photonotes.MainActivity;
 import com.example.raul.photonotes.Metadatos;
 import com.example.raul.photonotes.R;
 import com.facebook.Profile;
@@ -44,11 +45,14 @@ import java.util.Calendar;
 import Adapters.RecycleViewCustomAdapter;
 import Adapters.RecycleViewCustomAdapterCourses;
 import Azure.CRUDAzure;
+import Conecction.Connection;
 import DB.Modelo.Cursando;
 import DB.Modelo.Materia;
 import DB.Modelo.Photo;
 import DB.Modelo.PhotosCRUD;
 import DB.Modelo.Usuario;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -90,7 +94,7 @@ public class SubjectFragment extends Fragment {
     String horainit, horafin;
     ArrayList<Photo> photosPaths = new ArrayList<>();
 
-    
+    Connection conn = new Connection();
     public SubjectFragment() {
         // Required empty public constructor
     }
@@ -136,7 +140,26 @@ public class SubjectFragment extends Fragment {
         crud = new PhotosCRUD(getActivity());
 
 
-        crudazure.obtenerMateria();
+
+
+/**
+ * Valdiamos la conexion a Internet
+ *
+ * */
+
+        if (conn.isNetworkConnected(getApplicationContext()))
+        {
+            crudazure.obtenerMateria();
+
+            //Toast.makeText(getApplicationContext(), "Si hay Conexion A Internet ", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "No hay Conexion a AZure", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
 
 
         rvCourses = (RecyclerView) rootView.findViewById(R.id.rvCourses);
@@ -236,8 +259,19 @@ public class SubjectFragment extends Fragment {
                             Si todo Sale bien
                             * */
 
+                            /*
+                            Validamos  que tengamos Internet
+                            * **/
 
-                            crudazure.newMateria(new Materia(v_nombre));
+                            if (conn.isNetworkConnected(getApplicationContext()))
+                            {
+                                crudazure.newMateria(new Materia(v_nombre));
+                                //Toast.makeText(getApplicationContext(), "Si hay Conexion A Internet ", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "No hay Conexion a AZure", Toast.LENGTH_SHORT).show();
+                            }
+
                             id= crud.newMateria(new Materia(0,v_nombre));
                             user = crud.selectUsuario(profile.getName());
                             //Materia materia = crud.selectMateria()

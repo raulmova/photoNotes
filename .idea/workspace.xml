@@ -9,9 +9,33 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cdc0f79-01d3-483e-8f12-d4043b587816" name="Default" comment="Merge remote-tracking branch 'refs/remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;app/src/main/java/Fragments/SubjectFragment.java&#10;&#9;app/src/main/java/com/example/raul/photonotes/CoursesDay.java">
+    <list default="true" id="1cdc0f79-01d3-483e-8f12-d4043b587816" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okhttp3_okhttp_3_8_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okio_okio_1_13_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/Conecction/Connection.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_squareup_okio_okio_1_6_0_jar.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/Azure/CRUDAzure.java" afterPath="$PROJECT_DIR$/app/src/main/java/Azure/CRUDAzure.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Cursando.java" afterPath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Cursando.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Photo.java" afterPath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Photo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Usuario.java" afterPath="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Usuario.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/CoursesDay.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/CoursesDay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -66,86 +90,71 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1938">
-              <caret line="112" column="14" lean-forward="false" selection-start-line="112" selection-start-column="10" selection-end-line="112" selection-end-column="14" />
+            <state relative-caret-position="340">
+              <caret line="156" column="0" lean-forward="false" selection-start-line="144" selection-start-column="7" selection-end-line="156" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubjectFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SubjectFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
+            <state relative-caret-position="1785">
+              <caret line="157" column="9" lean-forward="true" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
               <folding>
-                <marker date="1512105993877" expanded="false" signature="4928:5023" ph="(view) → {" />
-                <marker date="1512105993877" expanded="false" signature="5787:5795" ph="&lt;~&gt;" />
-                <marker date="1512105993877" expanded="false" signature="6482:6593" ph="(view) → {" />
-                <marker date="1512105993877" expanded="false" signature="7000:7193" ph="(timePicker, selectedHour, selectedMinute) → {" />
-                <marker date="1512105993877" expanded="false" signature="7387:7418" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="7556:7579" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="7622:7733" ph="(view) → {" />
-                <marker date="1512105993877" expanded="false" signature="8140:8333" ph="(timePicker, selectedHour, selectedMinute) → {" />
-                <marker date="1512105993877" expanded="false" signature="8586:8617" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="8755:8778" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="8833:8979" ph="(dialog, which) → {" />
-                <marker date="1512105993877" expanded="true" signature="9950:10085" ph="//..." />
-                <marker date="1512105993877" expanded="false" signature="10870:11033" ph="(view, position) → {" />
-                <marker date="1512105993877" expanded="false" signature="11480:11515" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="12214:12237" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="12294:12436" ph="(dialog, i) → {" />
-                <marker date="1512105993877" expanded="false" signature="12495:12518" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="12658:12673" ph="}" />
-                <marker date="1512105993877" expanded="false" signature="12857:12980" ph="(view, position) → {" />
-                <marker date="1512105993877" expanded="false" signature="13371:13386" ph="}" />
-                <marker date="1512105993877" expanded="true" signature="13615:13715" ph="{...}" />
-                <marker date="1512105993877" expanded="true" signature="14142:14201" ph="{...}" />
-                <marker date="1512105993877" expanded="true" signature="14207:14669" ph="/**...*/" />
-                <marker date="1512105993877" expanded="true" signature="14721:14820" ph="{...}" />
-                <marker date="1512105993877" expanded="true" signature="14860:16358" ph="{...}" />
-                <marker date="1512105993877" expanded="true" signature="15606:15750" ph="//..." />
-                <marker date="1512105993877" expanded="true" signature="16476:17900" ph="{...}" />
-                <marker date="1512105993877" expanded="true" signature="16775:16874" ph="//..." />
-                <marker date="1512105993877" expanded="true" signature="16985:17137" ph="//..." />
-                <marker date="1512105993877" expanded="true" signature="17720:17828" ph="//..." />
+                <marker date="1512184265606" expanded="false" signature="5493:5588" ph="(view) → {" />
+                <marker date="1512184265606" expanded="false" signature="6352:6360" ph="&lt;~&gt;" />
+                <marker date="1512184265606" expanded="false" signature="7047:7158" ph="(view) → {" />
+                <marker date="1512184265606" expanded="false" signature="7565:7758" ph="(timePicker, selectedHour, selectedMinute) → {" />
+                <marker date="1512184265606" expanded="false" signature="7952:7983" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="8121:8144" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="8187:8298" ph="(view) → {" />
+                <marker date="1512184265606" expanded="false" signature="8705:8898" ph="(timePicker, selectedHour, selectedMinute) → {" />
+                <marker date="1512184265606" expanded="false" signature="9151:9182" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="9320:9343" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="9398:9544" ph="(dialog, which) → {" />
+                <marker date="1512184265606" expanded="false" signature="12033:12196" ph="(view, position) → {" />
+                <marker date="1512184265606" expanded="false" signature="12643:12678" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="13377:13400" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="13457:13599" ph="(dialog, i) → {" />
+                <marker date="1512184265606" expanded="false" signature="13658:13681" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="13821:13836" ph="}" />
+                <marker date="1512184265606" expanded="false" signature="14020:14143" ph="(view, position) → {" />
+                <marker date="1512184265606" expanded="false" signature="14534:14549" ph="}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CRUDAzure.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CRUDAzure.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Azure/CRUDAzure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+            <state relative-caret-position="79">
+              <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512106402952" expanded="false" signature="1600:1715" ph="(AsyncTask) (voids) → {" />
-                <marker date="1512106402952" expanded="false" signature="2253:2268" ph="}" />
-                <marker date="1512106402952" expanded="false" signature="2350:2465" ph="(AsyncTask) (voids) → {" />
-                <marker date="1512106402952" expanded="false" signature="3007:3022" ph="}" />
-                <marker date="1512106402952" expanded="false" signature="3095:3210" ph="(AsyncTask) (voids) → {" />
-                <marker date="1512106402952" expanded="false" signature="3740:3755" ph="}" />
-                <marker date="1512106402952" expanded="false" signature="3835:3950" ph="(AsyncTask) (voids) → {" />
-                <marker date="1512106402952" expanded="false" signature="4488:4503" ph="}" />
-                <marker date="1512106402952" expanded="false" signature="4652:4767" ph="(AsyncTask) (voids) → {" />
-                <marker date="1512106402952" expanded="false" signature="5431:5446" ph="}" />
+                <marker date="1512183409102" expanded="false" signature="1790:1905" ph="(AsyncTask) (voids) → {" />
+                <marker date="1512183409102" expanded="false" signature="2443:2458" ph="}" />
+                <marker date="1512183409102" expanded="false" signature="2540:2655" ph="(AsyncTask) (voids) → {" />
+                <marker date="1512183409102" expanded="false" signature="3197:3212" ph="}" />
+                <marker date="1512183409102" expanded="false" signature="3285:3400" ph="(AsyncTask) (voids) → {" />
+                <marker date="1512183409102" expanded="false" signature="3930:3945" ph="}" />
+                <marker date="1512183409102" expanded="false" signature="4025:4140" ph="(AsyncTask) (voids) → {" />
+                <marker date="1512183409102" expanded="false" signature="4678:4693" ph="}" />
+                <marker date="1512183409102" expanded="false" signature="4842:4957" ph="(AsyncTask) (voids) → {" />
+                <marker date="1512183409102" expanded="false" signature="5621:5636" ph="}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoursesDay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/CoursesDay.java">
+      <file leaf-file-name="Materia.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Materia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
-              <folding>
-                <marker date="1512105974417" expanded="true" signature="1822:2235" ph="{...}" />
-                <marker date="1512105974417" expanded="true" signature="1822:2326" ph="{...}" />
-                <marker date="1512105974417" expanded="true" signature="1902:2225" ph="{...}" />
-              </folding>
+            <state relative-caret-position="73">
+              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1909,20 +1918,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Materia.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Conncection/Connection.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Conecction/Connection.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/CoursesDay.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Azure/CRUDAzure.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Cursando.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Photo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/DB/Modelo/Usuario.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1928" />
-    <option name="y" value="-182" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
@@ -1948,6 +1962,16 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photoNotes" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
@@ -1980,7 +2004,29 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Azure" />
+              <option name="myItemId" value="DB" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modelo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photoNotes" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1992,7 +2038,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Flickr_App" />
     <property name="device.picker.selection" value="ZY2249C9NP" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
   </component>
@@ -2079,7 +2125,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512106403008" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512184346724" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2127,7 +2173,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512106403008" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512184346725" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2159,6 +2205,27 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2289,7 +2356,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512106403009" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512184346727" />
       </method>
     </configuration>
     <list size="1">
@@ -2339,7 +2406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512106051884</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'refs/remotes/origin/master'&#10;&#10;Conflicts:&#10;&#9;app/src/main/java/Fragments/SubjectFragment.java&#10;&#9;app/src/main/java/com/example/raul/photonotes/CoursesDay.java">
+      <created>1512106413293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512106413293</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2352,26 +2426,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-182" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5017065" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17537314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2424,46 +2498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_calendar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_photos.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_courses_day.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2587,11 +2621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="53" column="52" lean-forward="false" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <marker date="1512105974417" expanded="true" signature="1822:2235" ph="{...}" />
-            <marker date="1512105974417" expanded="true" signature="1822:2326" ph="{...}" />
-            <marker date="1512105974417" expanded="true" signature="1902:2225" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2599,6 +2629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2607,36 +2638,25 @@
         <state relative-caret-position="183">
           <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
           <folding>
-            <marker date="1512105993877" expanded="false" signature="4928:5023" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="5787:5795" ph="&lt;~&gt;" />
-            <marker date="1512105993877" expanded="false" signature="6482:6593" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="7000:7193" ph="(timePicker, selectedHour, selectedMinute) → {" />
-            <marker date="1512105993877" expanded="false" signature="7387:7418" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="7556:7579" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="7622:7733" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="8140:8333" ph="(timePicker, selectedHour, selectedMinute) → {" />
-            <marker date="1512105993877" expanded="false" signature="8586:8617" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="8755:8778" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="8833:8979" ph="(dialog, which) → {" />
-            <marker date="1512105993877" expanded="true" signature="9950:10085" ph="//..." />
-            <marker date="1512105993877" expanded="false" signature="10870:11033" ph="(view, position) → {" />
-            <marker date="1512105993877" expanded="false" signature="11480:11515" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12214:12237" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12294:12436" ph="(dialog, i) → {" />
-            <marker date="1512105993877" expanded="false" signature="12495:12518" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12658:12673" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12857:12980" ph="(view, position) → {" />
-            <marker date="1512105993877" expanded="false" signature="13371:13386" ph="}" />
-            <marker date="1512105993877" expanded="true" signature="13615:13715" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14142:14201" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14207:14669" ph="/**...*/" />
-            <marker date="1512105993877" expanded="true" signature="14721:14820" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14860:16358" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="15606:15750" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="16476:17900" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="16775:16874" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="16985:17137" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="17720:17828" ph="//..." />
+            <marker date="1512184265606" expanded="false" signature="5493:5588" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="6352:6360" ph="&lt;~&gt;" />
+            <marker date="1512184265606" expanded="false" signature="7047:7158" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="7565:7758" ph="(timePicker, selectedHour, selectedMinute) → {" />
+            <marker date="1512184265606" expanded="false" signature="7952:7983" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="8121:8144" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="8187:8298" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="8705:8898" ph="(timePicker, selectedHour, selectedMinute) → {" />
+            <marker date="1512184265606" expanded="false" signature="9151:9182" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="9320:9343" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="9398:9544" ph="(dialog, which) → {" />
+            <marker date="1512184265606" expanded="false" signature="12033:12196" ph="(view, position) → {" />
+            <marker date="1512184265606" expanded="false" signature="12643:12678" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13377:13400" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13457:13599" ph="(dialog, i) → {" />
+            <marker date="1512184265606" expanded="false" signature="13658:13681" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13821:13836" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="14020:14143" ph="(view, position) → {" />
+            <marker date="1512184265606" expanded="false" signature="14534:14549" ph="}" />
           </folding>
         </state>
       </provider>
@@ -2655,16 +2675,16 @@
           <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512106402952" expanded="false" signature="1600:1715" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="2253:2268" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="2350:2465" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="3007:3022" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="3095:3210" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="3740:3755" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="3835:3950" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="4488:4503" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="4652:4767" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="5431:5446" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="1790:1905" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="2443:2458" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="2540:2655" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="3197:3212" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="3285:3400" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="3930:3945" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="4025:4140" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="4678:4693" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="4842:4957" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="5621:5636" ph="}" />
           </folding>
         </state>
       </provider>
@@ -2678,20 +2698,6 @@
       </provider>
       <provider editor-type-id="android-manifest">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Cursando.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Azure.java" />
@@ -2737,6 +2743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2747,6 +2754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-33">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2814,6 +2822,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2834,6 +2843,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -2882,88 +2892,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938">
-          <caret line="112" column="14" lean-forward="false" selection-start-line="112" selection-start-column="10" selection-end-line="112" selection-end-column="14" />
+        <state relative-caret-position="456">
+          <caret line="46" column="47" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Conncection/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Conecction/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/CoursesDay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
-          <folding>
-            <marker date="1512105974417" expanded="true" signature="1822:2235" ph="{...}" />
-            <marker date="1512105974417" expanded="true" signature="1822:2326" ph="{...}" />
-            <marker date="1512105974417" expanded="true" signature="1902:2225" ph="{...}" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/photonotes/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
-          <folding>
-            <marker date="1512105993877" expanded="false" signature="4928:5023" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="5787:5795" ph="&lt;~&gt;" />
-            <marker date="1512105993877" expanded="false" signature="6482:6593" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="7000:7193" ph="(timePicker, selectedHour, selectedMinute) → {" />
-            <marker date="1512105993877" expanded="false" signature="7387:7418" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="7556:7579" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="7622:7733" ph="(view) → {" />
-            <marker date="1512105993877" expanded="false" signature="8140:8333" ph="(timePicker, selectedHour, selectedMinute) → {" />
-            <marker date="1512105993877" expanded="false" signature="8586:8617" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="8755:8778" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="8833:8979" ph="(dialog, which) → {" />
-            <marker date="1512105993877" expanded="true" signature="9950:10085" ph="//..." />
-            <marker date="1512105993877" expanded="false" signature="10870:11033" ph="(view, position) → {" />
-            <marker date="1512105993877" expanded="false" signature="11480:11515" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12214:12237" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12294:12436" ph="(dialog, i) → {" />
-            <marker date="1512105993877" expanded="false" signature="12495:12518" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12658:12673" ph="}" />
-            <marker date="1512105993877" expanded="false" signature="12857:12980" ph="(view, position) → {" />
-            <marker date="1512105993877" expanded="false" signature="13371:13386" ph="}" />
-            <marker date="1512105993877" expanded="true" signature="13615:13715" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14142:14201" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14207:14669" ph="/**...*/" />
-            <marker date="1512105993877" expanded="true" signature="14721:14820" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="14860:16358" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="15606:15750" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="16476:17900" ph="{...}" />
-            <marker date="1512105993877" expanded="true" signature="16775:16874" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="16985:17137" ph="//..." />
-            <marker date="1512105993877" expanded="true" signature="17720:17828" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Materia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="340">
+          <caret line="156" column="0" lean-forward="false" selection-start-line="144" selection-start-column="7" selection-end-line="156" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Azure/CRUDAzure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        <state relative-caret-position="79">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512106402952" expanded="false" signature="1600:1715" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="2253:2268" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="2350:2465" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="3007:3022" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="3095:3210" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="3740:3755" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="3835:3950" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="4488:4503" ph="}" />
-            <marker date="1512106402952" expanded="false" signature="4652:4767" ph="(AsyncTask) (voids) → {" />
-            <marker date="1512106402952" expanded="false" signature="5431:5446" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="1790:1905" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="2443:2458" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="2540:2655" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="3197:3212" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="3285:3400" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="3930:3945" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="4025:4140" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="4678:4693" ph="}" />
+            <marker date="1512183409102" expanded="false" signature="4842:4957" ph="(AsyncTask) (voids) → {" />
+            <marker date="1512183409102" expanded="false" signature="5621:5636" ph="}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Cursando.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="31" column="2" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/DB/Modelo/Materia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Fragments/SubjectFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="157" column="9" lean-forward="true" selection-start-line="157" selection-start-column="9" selection-end-line="157" selection-end-column="9" />
+          <folding>
+            <marker date="1512184265606" expanded="false" signature="5493:5588" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="6352:6360" ph="&lt;~&gt;" />
+            <marker date="1512184265606" expanded="false" signature="7047:7158" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="7565:7758" ph="(timePicker, selectedHour, selectedMinute) → {" />
+            <marker date="1512184265606" expanded="false" signature="7952:7983" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="8121:8144" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="8187:8298" ph="(view) → {" />
+            <marker date="1512184265606" expanded="false" signature="8705:8898" ph="(timePicker, selectedHour, selectedMinute) → {" />
+            <marker date="1512184265606" expanded="false" signature="9151:9182" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="9320:9343" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="9398:9544" ph="(dialog, which) → {" />
+            <marker date="1512184265606" expanded="false" signature="12033:12196" ph="(view, position) → {" />
+            <marker date="1512184265606" expanded="false" signature="12643:12678" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13377:13400" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13457:13599" ph="(dialog, i) → {" />
+            <marker date="1512184265606" expanded="false" signature="13658:13681" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="13821:13836" ph="}" />
+            <marker date="1512184265606" expanded="false" signature="14020:14143" ph="(view, position) → {" />
+            <marker date="1512184265606" expanded="false" signature="14534:14549" ph="}" />
           </folding>
         </state>
       </provider>

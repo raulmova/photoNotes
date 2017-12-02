@@ -13,6 +13,9 @@ public class Photo {
     private int id_materia;
     private String path;
     private String fecha;
+
+/*Azure String*/
+    public String id;
     
     public Photo(String path, String fecha) {
         this.path = path;

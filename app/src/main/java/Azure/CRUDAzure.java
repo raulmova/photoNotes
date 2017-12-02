@@ -54,6 +54,9 @@ public class CRUDAzure {
             try {
                 mClient= new MobileServiceClient("https://photonotesbeta.azurewebsites.net",activity);
                 tablaMateria = mClient.getTable(Materia.class);
+                tablaCursando = mClient.getTable(Cursando.class);
+                tablaPhoto = mClient.getTable(Photo.class);
+                tablaUsuario = mClient.getTable(Usuario.class);
 
             }
             catch (MalformedURLException e){
@@ -212,7 +215,37 @@ public class CRUDAzure {
             }
         }.execute();
     }
+    public void obtenerCursando(){
 
+        new AsyncTask<Void, Void,Void>(){
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+
+                try {
+                    //itemsMateria.clear();
+                    ArrayList<Cursando> query=tablaCursando.execute().get();
+
+
+                    for(Cursando item: query){
+                        Log.d("ObtenerITems",item.getNombre());
+                        itemsCursando.add(item);
+                    }
+                }
+                catch (Exception e){
+                    Log.d("Obtener Items", e.getMessage());
+                }
+                activity.runOnUiThread(new Runnable(){
+
+                    @Override
+                    public void run() {
+
+                    }
+                });
+                return null;
+            }
+        }.execute();
+    }
 
 
 

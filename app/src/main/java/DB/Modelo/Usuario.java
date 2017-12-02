@@ -11,7 +11,17 @@ public class Usuario {
     private String contra;
     private String correo;
 
+    //Azure ID
+
+    public String id;
+
     public Usuario(int id_user, String nombre, String contra, String correo) {
+        this.id_user = id_user;
+        this.nombre = nombre;
+        this.contra = contra;
+        this.correo = correo;
+    }
+    public Usuario(String nombre, String contra, String correo) {
         this.id_user = id_user;
         this.nombre = nombre;
         this.contra = contra;

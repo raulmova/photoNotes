@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import Adapters.LanguagesListAdapter1;
 import Adapters.RecycleViewCustomAdapterCourses;
+import DB.Modelo.Materia;
 import DB.Modelo.PhotosCRUD;
 
 public class CoursesDay extends AppCompatActivity {

@@ -6,6 +6,8 @@ package DB.Modelo;
 
 public class Cursando {
 
+    public String id;
+
     private int id_cursando;
     private int id_usuario;
     private int id_materia;
@@ -18,6 +20,16 @@ public class Cursando {
 
     public Cursando(int id_cursando, int id_usuario, int id_materia, String nombre, String descripcion, String horario, String hora_entrada, String hora_salida) {
         this.id_cursando = id_cursando;
+        this.id_usuario = id_usuario;
+        this.id_materia = id_materia;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.horario = horario;
+        this.hora_entrada = hora_entrada;
+        this.hora_salida = hora_salida;
+    }
+    public Cursando( int id_usuario, int id_materia, String nombre, String descripcion, String horario, String hora_entrada, String hora_salida) {
+
         this.id_usuario = id_usuario;
         this.id_materia = id_materia;
         this.nombre = nombre;
